@@ -40,13 +40,12 @@
     <div class=wrapper>
         <div class="body-content">
             <h1>MOFFAT BAY<br />LODGE</h1>
-            <p><img id="salish" src="_images/SalishSalmon.png"></img>Hey there! Welcome to Moffat Bay Lodge, your new favorite getaway 
-            spot tucked away on the gorgeous shores of Joviedsa Island, right off the stunning coast of Washington state! We can’t wait 
-            for you to dive into the incredible beauty and peace that the Pacific Northwest has to offer. At Moffat Bay Lodge, we’re all 
+            <p><img id="salish" src="_images/SalishSalmon.png"></img>Hey there! Welcome to Moffat Bay Lodge, your new favorite get away 
+            spot tucked away on the gorgeous shores of Portland, right off the stunning coast of Maine! We can't wait 
+            for you to dive into the incredible beauty and peace that Maine has to offer. At Moffat Bay Lodge, we are all 
             about mixing the wild charm of nature with a sprinkle of luxurious comfort. Picture this: a cozy haven where you can kick back, 
             listen to the soothing ocean waves, and soak in the tranquil vibes of the ancient forest. So come along with us on an exciting 
-            adventure through the wonders of Moffat Bay Lodge, where relaxation, adventure, and the enchanting spirit of the Pacific Northwest 
-            are just waiting for you!
+            adventure through the wonders of Moffat Bay Lodge, where relaxation, adventure, and the enchanting spirit of Maine are just waiting for you!
             </p>
         </div>
         <div class="background-image">
