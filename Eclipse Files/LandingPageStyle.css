@@ -1,0 +1,202 @@
+html {
+    background-color: #ADCCCD;
+    align-content: center;
+    font-family: 'Quasimoda';
+}
+
+html * {
+    color: #dad7cd;
+}
+
+body, html {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: #588157;
+    top: 0;
+    padding: 20px;
+    margin-bottom: 30px;
+    height: 100px;
+}
+
+h1 {
+    font-family: 'canto-brush-open', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.5em;
+}
+
+#logo {
+    padding: 20px;
+    float: left;
+    height: 75px;
+    width: 125px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+#salish {
+    width: 15%;
+    opacity: .20;
+    float: left;
+    margin: 5px;
+}
+
+.body-content {
+    background-color: #588157;
+    position: absolute;
+    padding: 15px;
+    margin-left: 150px;
+    margin-top: 100px;
+    width: 40%;
+    font-family: 'Quasimoda';
+    z-index: 2;
+    box-shadow: 20px 20px rgb(85,77,65, .40);
+}
+
+.body-content p {
+    font-size: 1.0em;
+    line-height: 35px;
+    font-weight: light;
+    text-align: justify;
+}
+
+.background-image {
+    float: right;
+    z-index: 1;
+    grid-column: 4;
+    margin-right: 150px;
+}
+
+.navbar {
+    font-size: 30px;
+    overflow: hidden;
+    background-color: #dad7cd;
+    position: sticky;
+    padding-bottom: 5px;
+    padding-top: 35px;
+    padding-right: 35px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: .75em;
+}
+
+.nav-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    padding: 20px;
+}
+
+.nav-grid-item {
+    display: grid;
+    padding: 5px;
+}
+
+.social-media {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.social-media a {
+    padding: 20px;
+}
+
+footer {
+    background-color: #dad7cd;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+footer p {
+    font-family: 'Quasimoda';
+    font-size: 15px;
+    font-weight: 400;
+    float: left;
+    display: flex;
+    padding: 10px;
+    font-style: italic;
+}
+
+.copyright {
+    display: flex;
+    margin-right: 10px;
+    margin-top: 35px;
+}
+
+figcaption {
+    font-style: italic;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float: right; /* Aligns the dropdown to the right */
+    margin-right: 35px; /* Adjust as needed */
+}
+
+/* Dropdown button */
+.dropbtn {
+    background-color: #a3b18a;
+    color: #588157;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* Aligns the dropdown content to the right */
+    background-color: a3b18a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #a3b18a;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #a3b18a;
+}
