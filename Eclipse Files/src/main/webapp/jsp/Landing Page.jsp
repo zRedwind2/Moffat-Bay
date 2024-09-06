@@ -24,15 +24,15 @@
             </p>
             <div class="links">
                 <div class="link-item">
-                    <a href="#">Link 1</a>
+                    <a href="#">Moffat Bay Lodge</a>
                     <img src="/Moffat_Bay/images/pexels-hikaique-775201.jpg" alt="Link 1 Image" class="image-small">
                 </div>
                 <div class="link-item">
-                    <a href="#">Link 2</a>
+                    <a href="#">Attractions</a>
                     <img src="/Moffat_Bay/images/pexels-rich-howard-1910092-12084941.jpg" alt="Link 2 Image" class="image-medium">
                 </div>
                 <div class="link-item">
-                    <a href="#">Link 3</a>
+                    <a href="#">Make a reservation</a>
                     <img src="/Moffat_Bay/images/istockphoto-135565559-612x612.jpg" alt="Link 3 Image" class="image-large">
                 </div>
             </div>
