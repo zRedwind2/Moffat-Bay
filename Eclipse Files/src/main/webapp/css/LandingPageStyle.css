@@ -1,20 +1,22 @@
 html {
-    background-color: #ADCCCD;
-    align-content: center;
+    background-color: #588157;
+    text-align: center;
     font-family: 'Quasimoda';
 }
 
 html * {
-    color: #dad7cd;
+    color: #344e41;
 }
 
-body, html {
-    margin: 0px;
-    padding: 0px;
+body, html, header, .wrapper, .body-content {
+    margin: 0;
+    padding: 0;
+    border: 0; /* Ensure no border is applied */
+    outline: none; /* Remove any outline that might appear as a border */
 }
 
 header {
-    background-color: #588157;
+    background-color: #dad7cd;
     top: 0;
     padding: 20px;
     margin-bottom: 30px;
@@ -37,34 +39,33 @@ h1 {
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
 
-#salish {
-    width: 15%;
-    opacity: .20;
+.landing-page-image {
+    width: 100%;
+    opacity: 1.00;
     float: left;
-    margin: 5px;
+    margin: 5px;    
 }
 
 .body-content {
     background-color: #588157;
-    position: absolute;
+    position: relative;
     padding: 15px;
-    margin-left: 150px;
-    margin-top: 100px;
-    width: 40%;
+    margin: 0 auto;
+    width: 80%;
     font-family: 'Quasimoda';
     z-index: 2;
-    box-shadow: 20px 20px rgb(85,77,65, .40);
+    box-shadow: 0px 0px 0px rgba(85, 77, 65, 0.40);
 }
 
 .body-content p {
-    font-size: 1.0em;
-    line-height: 35px;
-    font-weight: light;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 300;
     text-align: justify;
 }
 
@@ -78,7 +79,7 @@ h1 {
 .navbar {
     font-size: 30px;
     overflow: hidden;
-    background-color: #dad7cd;
+    background-color: #344e41;
     position: sticky;
     padding-bottom: 5px;
     padding-top: 35px;
@@ -90,7 +91,7 @@ h1 {
     display: block;
     text-align: center;
     text-decoration: none;
-    font-size: .75em;
+    font-size: 0.75em;
 }
 
 .nav-grid-container {
@@ -102,6 +103,69 @@ h1 {
 .nav-grid-item {
     display: grid;
     padding: 5px;
+}
+
+/* General link styling */
+a {
+    font-size: 1.2em; /* Adjust the font size as needed */
+    padding: 10px 15px; /* Add padding around the links */
+    margin: 5px; /* Add margin around the links */
+    text-decoration: none; /* Remove underline */
+    color: #344e41; /* Link color */
+}
+
+/* Hover effect for links */
+a:hover {
+    font-size: 1.3em; /* Slightly increase font size on hover */
+    color: #344e41; /* Change color on hover */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+/* Resize images */
+img {
+    max-width: 100%; /* Ensure the image scales down to fit its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Specific styling for your links' images */
+.links img {
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Styling for link items */
+.link-item {
+    text-align: center;
+    margin-bottom: 20px;
+    display: inline-block; /* Ensure items are side by side */
+    width: 30%; /* Adjust width as needed */
+    position: relative; /* Needed for positioning text over image */
+}
+
+.link-item a {
+    display: block;
+    margin-bottom: 10px; /* Space between text and image */
+}
+
+/* Individual image sizes */
+.image-small {
+    width: 350px; /* Adjust as needed */
+    height: auto;
+}
+
+.image-medium {
+    width: 395px; /* Adjust as needed */
+    height: Auto;
+}
+
+.image-large {
+    width: 800px; /* Adjust as needed */
+    height: auto;
+}
+
+/* Example for resizing the background image */
+.background-image img {
+    width: 100%; /* Make the background image take up the full width of its container */
+    height: Auto; /* Maintain aspect ratio */
 }
 
 .social-media {
@@ -118,7 +182,7 @@ h1 {
 
 footer {
     background-color: #dad7cd;
-    position: sticky;
+    position: ;
     bottom: 0;
     display: flex;
     margin-left: auto;
@@ -149,54 +213,19 @@ figcaption {
     text-align: center;
 }
 
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    float: right; /* Aligns the dropdown to the right */
-    margin-right: 35px; /* Adjust as needed */
-}
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .body-content {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-/* Dropdown button */
-.dropbtn {
-    background-color: #a3b18a;
-    color: #588157;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+    .navbar {
+        font-size: 20px;
+    }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0; /* Aligns the dropdown content to the right */
-    background-color: a3b18a;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #a3b18a;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #a3b18a;
+    h1 {
+        font-size: 3em;
+    }
 }
