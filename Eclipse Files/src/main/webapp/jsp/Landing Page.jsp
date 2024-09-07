@@ -5,8 +5,8 @@
     <meta name="description" content="Moffat Bay Lodge - Your new favorite getaway spot on the gorgeous shores of Portland, Maine.">
     <meta name="keywords" content="Moffat Bay Lodge, Portland, Maine, getaway, nature, luxury">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/Landing Page Style.css">
-    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/WebContent/css/topNav.css">
+    <jsp:include page="TopMenu.jsp" flush="true" />
+    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/LandingPageStyle.css">
     <title>Moffat Bay Lodge</title>
 </head>
 <body>
