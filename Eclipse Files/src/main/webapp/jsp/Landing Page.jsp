@@ -1,15 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Moffat Bay Lodge - Your new favorite getaway spot on the gorgeous shores of Portland, Maine.">
     <meta name="keywords" content="Moffat Bay Lodge, Portland, Maine, getaway, nature, luxury">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/Landing Page Style.css">
+    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/LandingPageStyle.css">
+    <jsp:include page="TopMenu.jsp" flush="true" />
     <title>Moffat Bay Lodge</title>
 </head>
 <body>
-    <header></header>
     <div class="wrapper">
         <div class="body-content">
             <h1>Moffat Bay<br />Lodge</h1>
@@ -24,31 +24,42 @@
             </p>
             <div class="links">
                 <div class="link-item">
-                    <a href="#">Moffat Bay Lodge</a>
-                    <img src="/Moffat_Bay/images/pexels-hikaique-775201.jpg" alt="Link 1 Image" class="image-small">
+                    Moffat Bay Lodge
+                    <div class="image-box image-box-small">
+                        <a href="">
+                            <img src="/Moffat_Bay/images/pexels-hikaique-775201.jpg" alt="Link 1 Image" class="image-small">
+                        </a>
+                    </div>
                 </div>
                 <div class="link-item">
-                    <a href="#">Attractions</a>
-                    <img src="/Moffat_Bay/images/pexels-rich-howard-1910092-12084941.jpg" alt="Link 2 Image" class="image-medium">
+                    Attractions
+                    <div class="image-box image-box-medium">
+                        <a href="/Moffat_Bay/jsp/LandingPage.jsp#attractions">
+                            <img src="/Moffat_Bay/images/pexels-rich-howard-1910092-12084941.jpg" alt="Link 2 Image" class="image-medium">
+                        </a>
+                    </div>
                 </div>
                 <div class="link-item">
-                    <a href="#">Make a reservation</a>
-                    <img src="/Moffat_Bay/images/istockphoto-135565559-612x612.jpg" alt="Link 3 Image" class="image-large">
+                    Make a reservation
+                    <div class="image-box image-box-large">
+                        <img src="/Moffat_Bay/images/istockphoto-135565559-612x612.jpg" alt="Link 3 Image" class="image-large no-cursor">
+                        <div class="reservation-options">
+                            <button>Make a Reservation</button>
+                            <button>Reservation Look-up</button>
+                            <div class="reservation-inputs">
+                                <label for="reservation-id">ID</label>
+                                <input type="text" id="reservation-id" name="reservation-id">
+                                <label for="reservation-email">Email</label>
+                                <input type="email" id="reservation-email" name="reservation-email">
+                                <button>Enter</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <a href="login"><i class="fa fa-user-circle-o" style="float:right;font-size:56px;color:#dad7cd"></i></a>
             <br /><br /><br />
         </div>
     </div>
-    <footer>
-        <p>Moffat Bay Lodge<br />523 Moffat Bay Dr<br />Portland, ME 04107<br />1-888-425-7852</p>
-        <div class="social-media">
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-snapchat"></a>
-        </div>
-        <p class="copyright">Copyright © 2023 Moffat Bay</p>
-    </footer>
 </body>
 </html>
