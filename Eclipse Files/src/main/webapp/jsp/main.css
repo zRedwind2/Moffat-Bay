@@ -1,0 +1,14 @@
+/* Center form fields vertically */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Center the footer links */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+}
