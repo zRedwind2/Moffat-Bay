@@ -1,6 +1,6 @@
 <!-- Louis Capps : Moffat Bay Assignment : Top Bar -->
 <!-- This jsp file sets up the top bar of the view screen. It can be included in other JSP's to show the top menu bar. -->
-<!-- The code to include it is "<jsp:include page="TopMenu.jsp" flush="true" />" and it should go into the <head> of a page. -->
+
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
