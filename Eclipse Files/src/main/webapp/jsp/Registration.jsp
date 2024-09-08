@@ -5,36 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
-    <!-- Link to topNav.css for navigation bar styles -->
-    <link rel="stylesheet" type="text/css" href="topNav.css">
     <!-- Link to bottomNav.css for footer styles -->
     <link rel="stylesheet" type="text/css" href="bottomNav.css">
     <!-- Link to main.css for other page styles -->
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/main.css">
+    <!-- Link to registration.css for Registration page styles --> 
+    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/registration.css">
+    <!-- Includes TopMenu.jsp for the top naviation bar. -->
+    <jsp:include page="TopMenu.jsp" flush="true" />
 </head>
 <body>
-
-    <!-- Top Navigation Bar -->
-    <div class="navbar">
-        <!-- Logo on the left -->
-        <img src="logo.png" alt="Logo" width="50" height="50">
-
-        <!-- Centered Navigation Links -->
-        <div class="nav-center">
-            <a href="rooms.jsp">Rooms</a>
-            <a href="attractions.jsp">Attractions</a>
-            <a href="register.jsp">Sign Up</a>
-        </div>
-
-        <!-- Dropdown for Account on the right -->
-        <div class="dropdown">
-            <button class="dropbtn">Account</button>
-            <div class="dropdown-content">
-                <a href="login.jsp">Login</a>
-                <a href="reservations.jsp">My Reservations</a>
-            </div>
-        </div>
-    </div>
 
     <!-- Main Registration Form -->
     <div class="container">
@@ -65,7 +45,7 @@
                         <td><input type="password" id="password" name="password" required></td>
                     </tr>
                 </table>
-                <button type="submit" style="width: 30%; margin-top: 15px; font-size: 18px; font-weight: bold;">Submit</button>
+                <button type="submit" >Submit</button>
 
                 <!-- Display error message if set -->
                 <%

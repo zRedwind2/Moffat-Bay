@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+button {
+    display: block;
+    margin: 10px auto; /* Center the buttons */
+    padding: 10px 20px;
+    background-color: #344e41;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

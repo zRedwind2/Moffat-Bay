@@ -12,3 +12,13 @@
     text-align: center;
     margin-top: 50px;
 }
+
+html {
+    background-color: #3a5a40;
+    text-align: center;
+    font-family: 'Quasimoda';
+}
+
+html * {
+    color: #dad7cd;
+}
