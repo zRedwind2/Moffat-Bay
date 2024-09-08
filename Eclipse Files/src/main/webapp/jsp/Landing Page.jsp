@@ -1,20 +1,29 @@
-<!doctype html>
+<!-- Brett Stovall w/ minor edits and comments by Louis Capps : Moffat Bay Assignment : Landing Page -->
+<!-- This jsp file sets up the Landing Page of the website. -->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Moffat Bay Lodge - Your new favorite getaway spot on the gorgeous shores of Portland, Maine.">
     <meta name="keywords" content="Moffat Bay Lodge, Portland, Maine, getaway, nature, luxury">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/Landing Page Style.css">
+    
+    <!-- Referencing stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/LandingPageStyle.css">
+    
+    <!-- Includes TopMenu.jsp for the top naviation bar. -->
+    <jsp:include page="TopMenu.jsp" flush="true" />
     <title>Moffat Bay Lodge</title>
 </head>
 <body>
-    <header></header>
     <div class="wrapper">
         <div class="body-content">
-            <h1>Moffat Bay<br />Lodge</h1>
+            <h1>Moffat Bay Lodge</h1>
+            
+            <!-- Image and text blurb about Moffat Bay Lodge. -->
             <p>
-                <img src="/Moffat_Bay/images/landing_page1.jpg" alt="Moffat Bay Lodge" class="landing-page-image"><br />
+                <img src="/Moffat_Bay/images/landing_page1.png" alt="Moffat Bay Lodge" class="landing-page-image"><br />
                 Hey there! Welcome to Moffat Bay Lodge, your new favorite getaway spot tucked away on the gorgeous shores of
                 Portland, right off the stunning coast of Maine! We can't wait for you to dive into the incredible beauty and 
                 peace that Maine has to offer. At Moffat Bay Lodge, we are all about mixing the wild charm of nature with a 
@@ -22,33 +31,59 @@
                 waves, and soak in the tranquil vibes of the ancient forest. So come along with us on an exciting adventure through 
                 the wonders of Moffat Bay Lodge, where relaxation, adventure, and the enchanting spirit of Maine are just waiting for you!
             </p>
+            <!-- div class links contains three different items for the three image/link/input field sections of the landing page. -->
             <div class="links">
+            	<!-- This link-item div class contains an image and a button. -->
                 <div class="link-item">
-                    <a href="#">Moffat Bay Lodge</a>
-                    <img src="/Moffat_Bay/images/pexels-hikaique-775201.jpg" alt="Link 1 Image" class="image-small">
+                    <div class="image-box image-box-small">
+                    	<!-- Uses the div image-small class to define the size of the picture in the css file. -->
+                    	<img src="/Moffat_Bay/images/pexels-hikaique-775201.jpg" alt="Link 1 Image" class="image-small">
+                    	<!-- A button div class is used for the buttons on the page. -->
+						<div class="button">
+                        	<button>Moffat Bay Lodge Info</button>
+                        </div>
+                    </div>
                 </div>
+                <!-- This link-item div class contains an image and a button. -->
                 <div class="link-item">
-                    <a href="#">Attractions</a>
-                    <img src="/Moffat_Bay/images/pexels-rich-howard-1910092-12084941.jpg" alt="Link 2 Image" class="image-medium">
+                    <div class="image-box image-box-medium">
+                    	<!-- Uses the div image-medium class to define the size of the picture in the css file. -->
+                        <img src="/Moffat_Bay/images/pexels-rich-howard-1910092-12084941.jpg" alt="Link 2 Image" class="image-medium">
+                        <!-- A button div class is used for the buttons on the page. -->
+						<div class="button">
+                        	<button>Attractions</button>
+                        </div>
+                    </div>
                 </div>
+                <!-- The following link-item contains an image, two buttons, and two input fields. -->
                 <div class="link-item">
-                    <a href="#">Make a reservation</a>
-                    <img src="/Moffat_Bay/images/istockphoto-135565559-612x612.jpg" alt="Link 3 Image" class="image-large">
+                    <div class="image-box image-box-large">
+                    	<!-- Uses the div image-large no-cursor class to define the size of the picture in the css file. -->
+                        <img src="/Moffat_Bay/images/istockphoto-135565559-612x612.jpg" alt="Link 3 Image" class="image-large no-cursor">
+                        <div class="reservation-options">
+                       		<!-- A button div class is used for the buttons on the page. -->
+                        	<div class="button">
+                            	<button>Make a Reservation</button>
+                            </div>
+                            <!-- A seperate dive class for the reservation look-up button and text fields. -->
+                            <div class="reservation-inputs">
+                            <br/>
+                            Reservation Look-up
+                            <br/>
+                            <br/>
+                                <label for="reservation-id">  ID</label>
+                                <input type="text" id="reservation-id" name="reservation-id">
+                                <br/>
+                                <label for="reservation-email">Email</label>
+                                <input type="email" id="reservation-email" name="reservation-email">
+                                <button>Enter</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <a href="login"><i class="fa fa-user-circle-o" style="float:right;font-size:56px;color:#dad7cd"></i></a>
             <br /><br /><br />
         </div>
     </div>
-    <footer>
-        <p>Moffat Bay Lodge<br />523 Moffat Bay Dr<br />Portland, ME 04107<br />1-888-425-7852</p>
-        <div class="social-media">
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-snapchat"></a>
-        </div>
-        <p class="copyright">Copyright © 2023 Moffat Bay</p>
-    </footer>
 </body>
 </html>

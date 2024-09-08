@@ -36,7 +36,7 @@
 .dropdown .dropbtn {
   border: none;
   outline: none;
-  background-color: inherit;
+  background-color: #a3b18a;
 }
 
 .dropdown .dropbtn {
@@ -45,12 +45,12 @@ float: center;
 
 /* Add a background color to the navbar links when hovering. */
 .navbar a:hover, .dropdown:hover .dropbtn{
-  background-color: #ddd;
+  background-color: #dad7cd;
 }
 
 /* Add a background color to the navbar links when hovering. */
 .dropdown:hover .dropbtn{
-  background-color: #ddd;
+  background-color: #dad7cd;
 }
 
 /* Dropdown content. Shows when hovering over button. */
