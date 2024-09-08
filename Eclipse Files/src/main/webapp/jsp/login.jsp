@@ -25,21 +25,22 @@
 		<div class="body">
 		<p> 
 			<!-- Top Image Under Top Menu Bar, placeholder for now -->
-			<!-- <img src="/Moffat_Bay/images/landing_page1.png" alt="Moffat Bay Lodge" class="landing-page-image"><br /> -->
+			<!-- <img src="/Moffat_Bay/images/landing_page1.png" alt="Moffat Bay Lodge" class="landing-page-image"><br />  -->
 		</p>
 		
 		<!--  Contains Login Box with fields for username and password, and button to login after entering information.  -->
 		<div class="loginBox">
 			<form name="login">
+			<h2 style="text-align: center;">Login</h2>
 				<table>
 							
 					<tbody>
 					<tr>
-						<td>Username</td>
+						<td><label for="username">Username:</label></td>
 						<td><input type="text" id="username" name="username" /></td>
 					</tr>
 					<tr>
-						<td>Password</td>
+						<td><label for="password">Password:</label></td>
 						<td><input type="text" id="password" name="password" /></td>
 					</tr>
 					</tbody>
@@ -47,7 +48,7 @@
 				</table>
 				<!-- Login Button -->
 				
-				<button type="submit" >Login</button>
+				<button type="submit" >Submit</button>
 			</form>
 		
 		</div>
