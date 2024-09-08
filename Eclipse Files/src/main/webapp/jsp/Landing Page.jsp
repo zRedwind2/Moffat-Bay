@@ -14,6 +14,8 @@
     
     <!-- Includes TopMenu.jsp for the top naviation bar. -->
     <jsp:include page="TopMenu.jsp" flush="true" />
+    
+    <jsp:include page="BottomMenu.jsp" flush="true" />
     <title>Moffat Bay Lodge</title>
 </head>
 <body>
