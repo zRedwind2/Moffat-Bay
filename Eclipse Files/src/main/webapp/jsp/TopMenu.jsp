@@ -27,7 +27,7 @@
     <!-- Setting up the dropdown content div class to hold the links -->
     <div class="dropdown-content">
       <a href="#Login">Login</a>
-      <a href="#Registration">Registration</a>
+      <a href="/Moffat_Bay/jsp/Registration.jsp">Registration</a>
       <a href="#Reservation">Reservation</a>
       <a href="#Resrvation Lookup">Reservation Lookup</a>
     </div>

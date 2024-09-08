@@ -1,5 +1,15 @@
 @charset "ISO-8859-1";
 
+
+/* Center form fields vertically */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
 .registration-form button {
     display: block;
     margin: 10px auto; /* Center the buttons */
@@ -28,4 +38,10 @@
 
 .registration-form h2 {
 	color: #344e41;
+}
+
+.registration-form input {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    color: black;
 }
