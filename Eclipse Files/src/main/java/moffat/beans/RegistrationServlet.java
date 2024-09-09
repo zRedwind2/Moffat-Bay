@@ -1,3 +1,5 @@
+// Anthony Williams : Moffat Bay Assignment : Registration Servlet
+
 package moffat.beans;
 
 import moffat.utils.PasswordUtils;
