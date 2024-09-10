@@ -28,7 +28,7 @@
     <div class="dropdown-content">
       <a href="/Moffat_Bay/jsp/login.jsp">Login</a>
       <a href="/Moffat_Bay/jsp/Registration.jsp">Registration</a>
-      <a href="#Reservation">Reservation</a>
+      <a href="/Moffat_Bay/jsp/Reservation.jsp">Reservation</a>
       <a href="#Resrvation Lookup">Reservation Lookup</a>
     </div>
   </div>

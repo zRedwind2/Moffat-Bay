@@ -60,20 +60,23 @@ h1 {
     margin-right: 150px;
 }
 
-/* General link styling */
-a {
-    font-size: 1.2em; /* Adjust the font size as needed */
-    padding: 10px 15px; /* Add padding around the links */
-    margin: 5px; /* Add margin around the links */
-    text-decoration: none; /* Remove underline */
-    color: #344e41; /* Link color */
+/* Make a Reservation link styling */
+.rButton a {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #344e41;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 200px;
 }
 
-/* Hover effect for links */
-a:hover {
-    font-size: 1.3em; /* Slightly increase font size on hover */
-    color: #344e41; /* Change color on hover */
-    transition: all 0.3s ease; /* Smooth transition effect */
+/* Make a Reservation link styling */
+.rButton a:hover {
+	background-color: #588157;
 }
 
 /* Resize images */
@@ -186,7 +189,6 @@ img {
 }
 
 .reservation-inputs label {
-
 	color: #344e41;
     display: block;
     margin: 2px 0 2px;
