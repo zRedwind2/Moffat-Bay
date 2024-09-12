@@ -33,7 +33,7 @@
         </div>
 
         <div class="button-container">
-            <form action="http://localhost:9000/Moffat_Bay/jsp/Reservation.jsp" method="get">
+            <form action="/Moffat_Bay/jsp/Reservation.jsp" method="get">
                 <button type="submit" name="action" value="cancel" class="cancel-button">Cancel</button>
             </form>
             <form action="reservationSummary.jsp" method="post">
@@ -50,7 +50,7 @@
     String action = request.getParameter("action");
     if ("cancel".equals(action)) {
         // Redirect to the specified reservation page if the action is cancel
-        response.sendRedirect("http://localhost:9000/Moffat_Bay/jsp/Reservation.jsp");
+        response.sendRedirect("/Moffat_Bay/jsp/Reservation.jsp");
     } else if ("submit".equals(action)) {
         // Get reservation details from the request parameters
         String checkInDate = request.getParameter("check-in-date");
