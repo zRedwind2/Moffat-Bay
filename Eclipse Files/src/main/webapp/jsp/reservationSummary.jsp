@@ -61,19 +61,29 @@
         try {
             // Load the MySQL JDBC driver
             Class.forName("com.mysql.cj.jdbc.Driver");
+
             // Establish a connection to the database
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/yourDatabase", "username", "password");
-            // SQL query to insert the reservation details into the database
-            String sql = "INSERT INTO reservations (check_in_date, check_out_date, num_beds, num_guests, total_price) VALUES (?, ?, ?, ?, ?)";
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MoffatBayLodge", "username", "password");
+
+            // SQL query to insert the booking details into the Bookings table
+            String sql = "INSERT INTO Bookings (Account_ID, Room_ID, Occupancy, Check_In, Check_Out) VALUES (?, ?, ?, ?, ?)";
+
             PreparedStatement stmt = conn.prepareStatement(sql);
+
+            // Assuming Account_ID and Room_ID are already determined
+            int accountId = 1;  
+            int roomId = Integer.parseInt(numBeds);  
+
             // Set the parameters for the SQL query
-            stmt.setString(1, checkInDate);
-            stmt.setString(2, checkOutDate);
-            stmt.setInt(3, Integer.parseInt(numBeds));
-            stmt.setInt(4, Integer.parseInt(numGuests));
-            stmt.setDouble(5, Double.parseDouble(totalPrice));
+            stmt.setInt(1, accountId);
+            stmt.setInt(2, roomId);  
+            stmt.setInt(3, Integer.parseInt(numGuests));  
+            stmt.setDate(4, java.sql.Date.valueOf(checkInDate));  
+            stmt.setDate(5, java.sql.Date.valueOf(checkOutDate));  
+
             // Execute the SQL query
             stmt.executeUpdate();
+
             // Close the database connection
             conn.close();
         } catch (Exception e) {
