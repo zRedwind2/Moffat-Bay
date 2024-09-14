@@ -3,8 +3,7 @@
 <html>
 <head>
     <title>Reservation Summary</title>
-    <!-- Link to Reservation.css for reservation summary styles -->
-    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/Reservation.css">
+
     <!-- Link to reservationSummaryStyle.css for additional styles -->
     <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/reservationSummaryStyle.css">
     <!-- Includes TopMenu.jsp for the top navigation bar -->

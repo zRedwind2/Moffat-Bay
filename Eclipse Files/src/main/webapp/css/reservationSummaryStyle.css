@@ -3,8 +3,6 @@ body {
     font-family: Arial, sans-serif; /* Sets the font family for the body */
     background-color: #3a5a40; /* Sets the background color for the body */
     color: #dad7cd; /* Sets the general text color */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
     display: flex; /* Uses flexbox layout for the body */
     flex-direction: column; /* Arranges children in a column */
     min-height: 100vh; /* Ensures the body takes the full viewport height */
@@ -52,7 +50,7 @@ body {
 }
 
 /* Button Styles */
-button {
+.button-container button {
     padding: 10px 20px; /* Adds padding inside the buttons */
     border: none; /* Removes the border */
     border-radius: 5px; /* Rounds the corners of the buttons */
