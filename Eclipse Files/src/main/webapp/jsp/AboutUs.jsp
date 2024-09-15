@@ -24,12 +24,10 @@
         <div class="content-box">
             <!-- Main heading -->
             <h1 class="main-heading">Moffat Bay Lodge</h1>
-            <!-- Sub heading -->
-            <h2 class="sub-heading">Description About Us</h2>
             <div class="image-row">
                 <!-- Above description images -->
-                <img src="/Moffat_Bay (3)/images/about us page image 2.jpg" alt="Above Description Image 1" class="above-description1">
-                <img src="/Moffat_Bay (3)/images/about us image 1.jpg" alt="Above Description Image 2" class="above-description2">
+                <img src="/Moffat_Bay/images/about us page image 2.jpg" alt="Above Description Image 1" class="above-description1">
+                <img src="/Moffat_Bay/images/about us image 1.jpg" alt="Above Description Image 2" class="above-description2">
             </div>
             <div class="description-box">
                 <!-- Description text -->
@@ -44,8 +42,15 @@
                     and the rustic charm that makes our lodge unique.
                 </p>
             </div>
+            
+            <div class="description-box">
+				<h2>Contact Us</h2>
+				<p class="phone"><strong>Phone number:</strong> 123-456-7890</p>
+				<p class="email"><strong>Email:</strong> MoffatBay@email.com</p>
+				<p class="address"><strong>Address:</strong> 123 Moffat Bay Dr. Moffat Bay City, FL, 98765 </p>
+            </div>
             <!-- Below description image -->
-            <img src="/Moffat_Bay (3)/images/about us page image 3.jpg" alt="Moffat Bay Lodge" class="below-description"><br />
+            <img src="/Moffat_Bay/images/about us page image 3.jpg" alt="Moffat Bay Lodge" class="below-description"><br />
         </div>
     </div>
 </body>
