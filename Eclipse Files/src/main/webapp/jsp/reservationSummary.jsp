@@ -3,12 +3,16 @@
 <html>
 <head>
     <title>Reservation Summary</title>
-
+	
+	<!-- Link to reservationSummaryStyle.css for additional styles -->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reservationSummaryStyle.css">
+    <!-- Includes TopMenu.jsp for the top navigation bar -->
     <jsp:include page="TopMenu.jsp" flush="true" />
+    <!-- Includes BottomMenu.jsp for the bottom navigation bar -->
     <jsp:include page="BottomMenu.jsp" flush="true" />
 </head>
 <body>
+	<!-- Main container for the reservation summary -->
     <div class="reservation-summary">
         <header>
             <h1>Reservation Summary</h1>

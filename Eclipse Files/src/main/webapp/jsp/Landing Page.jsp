@@ -64,8 +64,8 @@
                         <img src="/Moffat_Bay/images/istockphoto-135565559-612x612.jpg" alt="Link 3 Image" class="image-large no-cursor">
                         <div class="reservation-options">
                        		<!-- A button div class is used for the buttons on the page. -->
-                        	<div class="button">
-                            	<button>Make a Reservation</button>
+                        	<div class="rButton">
+                            	<a href="Reservation.jsp">Make a Reservation</a>
                             </div>
                             <!-- A seperate dive class for the reservation look-up button and text fields. -->
                             <div class="reservation-inputs">

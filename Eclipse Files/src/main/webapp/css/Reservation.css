@@ -1,0 +1,73 @@
+@charset "ISO-8859-1";
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.total-button {
+    flex-grow: 0; /* Prevent the button from taking up extra space */
+    align-self: flex-end; /* Align the button to the bottom */
+}
+
+.images img {
+	width: 300px;
+}
+
+.dropdown-menus {
+	padding-right: 30px;
+}
+
+.dropdown-menus input{
+	border: 2px solid #83836c;
+    border-radius: 2px;
+    color: black;
+}
+
+.dropdown-menus select{
+	border: 2px solid #83836c;
+    border-radius: 2px;
+    color: black;
+}
+
+.dropdown-menus option {
+	border: 2px solid #83836c;
+    border-radius: 2px;
+    color: black;
+}
+
+.total-button button {
+    display: block;
+    margin: 10px auto; /* Center the buttons */
+    padding: 10px 20px;
+    background-color: #344e41;
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-menus {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    margin-bottom: 10px; /* Add spacing between form groups */
+}
+
+.container {
+	background-color: #dad7cd; /* Light grey background */
+    padding: 20px; /* Space between the image and the box border */
+    border: 2px solid #83836c; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensure the box fits around the image */
+    margin: 20px; /* Space around each box */
+    text-align: center; /* Center the content */
+}
+
+.images {
+	float: right;
+}
