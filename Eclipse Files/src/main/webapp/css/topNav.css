@@ -6,6 +6,7 @@
   overflow: hidden;
   padding: 5px; /* Adds 5px padding to the elements in the top bar */
   border: 2px solid #83836c; /* Adds a border to the top bar box. */
+  font-family: 'Quasimoda';
 }
 
 /* Modifies the links inside the navbar */
