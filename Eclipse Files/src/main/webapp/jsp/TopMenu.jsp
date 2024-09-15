@@ -14,7 +14,7 @@
 	<!-- Adding Left image and links. -->
   <img src="/Moffat_Bay/images/lodge.jpg" alt="Image">
   <a href="/Moffat_Bay/jsp/Landing Page.jsp">Home</a>
-  <a href="#AboutUs">About Us</a>
+  <a href="/Moffat_Bay/jsp/AboutUs.jsp">About Us</a>
   <a href="#Attractions">Attractions</a>
   <!-- Creating a div class for the dropdown menu -->
   <div class="dropdown">
@@ -28,7 +28,7 @@
     <div class="dropdown-content">
       <a href="/Moffat_Bay/jsp/login.jsp">Login</a>
       <a href="/Moffat_Bay/jsp/Registration.jsp">Registration</a>
-      <a href="#Reservation">Reservation</a>
+      <a href="/Moffat_Bay/jsp/Reservation.jsp">Reservation</a>
       <a href="#Resrvation Lookup">Reservation Lookup</a>
     </div>
   </div>

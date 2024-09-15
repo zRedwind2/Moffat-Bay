@@ -9,6 +9,6 @@
     <ul>
         <li><a href="/Moffat_Bay/jsp/Landing Page.jsp">Home</a></li>
         <li>-</li>
-        <li><a href="/Moffat_Bay/jsp/AboutUs.jsp">About Us</a></li>
+		<li><a href="/Moffat_Bay/jsp/AboutUs.jsp">About Us</a></li>
     </ul>
 </div>
