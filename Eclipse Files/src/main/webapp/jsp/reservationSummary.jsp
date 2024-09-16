@@ -1,3 +1,5 @@
+<!-- Louis Capps : Anthony Williams: Brett Stovall : Moffat Bay Assignment : Reservation Page -->
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -24,30 +26,55 @@
             String guests = request.getParameter("guests");
             String checkIn = request.getParameter("checkIn");
             String checkOut = request.getParameter("checkOut");
-
+            String room = null;
+           	double price = 0;
+            
             if (roomSize == null || guests == null || checkIn == null || checkOut == null) {
                 roomSize = (String) request.getAttribute("roomSize");
                 guests = (String) request.getAttribute("guests");
                 checkIn = (String) request.getAttribute("checkIn");
                 checkOut = (String) request.getAttribute("checkOut");
             }
+            int guestNumber = Integer.parseInt(guests);
+            if (guestNumber <= 2){
+            	price = 120.75;
+            }
+            if (guestNumber >= 3){
+            	price = 157.50;
+            }
+            
+            switch (roomSize) {
+            case "doubleFullBed":
+            	room = "Double Full Beds";
+            	break;
+            case "queen":
+            	room = "Queen";
+            	break;
+            case "doubleQueenBeds":
+            	room = "Double Queen Beds";
+            	break;
+            case "king":
+            	room = "king";
+            	break;
+            }
         %>
 
         <!-- Display reservation details -->
         <div class="reservation-details">
             <h2>Your Reservation</h2>
-            <p>Room Size: <%= roomSize %></p>
+            <p>Room Size: <%= room %></p>
             <p>Guests: <%= guests %></p>
             <p>Check-in Date: <%= checkIn %></p>
             <p>Check-out Date: <%= checkOut %></p>
-        </div>
+            <p>Price: <%= price %></p>
+
 
         <div class="button-container">
             <!-- Cancel button -->
             <form action="${pageContext.request.contextPath}/ReservationSummaryServlet" method="post">
                 <button type="submit" name="action" value="cancel" class="cancel-button">Cancel</button>
             </form>
-
+			
             <!-- Submit button -->
             <form action="${pageContext.request.contextPath}/ReservationSummaryServlet" method="post">
                 <input type="hidden" name="roomSize" value="<%= roomSize %>">
@@ -57,6 +84,7 @@
                 <button type="submit" name="action" value="submit" class="submit-button">Submit</button>
             </form>
         </div>
+                </div>
     </div>
 </body>
 </html>

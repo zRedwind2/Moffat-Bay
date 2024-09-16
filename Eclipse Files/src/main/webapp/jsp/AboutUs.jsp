@@ -1,4 +1,5 @@
-<!-- Brett Stovall: Moffat Bay Assignment : About Us page -->
+<!-- Brett Stovall : Moffat Bay Assignment : About Us page -->
+<!-- Edits by Louis Capps -->
 <!-- This jsp file sets up the About Us page of the website. -->
 
 

@@ -1,3 +1,5 @@
+// Anthony Williams : Moffat Bay Assignment : Reservation Summary Servlet
+
 package moffat.beans;
 
 import java.io.IOException;
