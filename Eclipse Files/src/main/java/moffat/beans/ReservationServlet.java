@@ -1,3 +1,5 @@
+// Anthony Williams : Moffat Bay Assignment : Reservation Servlet
+
 package moffat.beans;
 
 import javax.servlet.*;

@@ -1,6 +1,5 @@
-<!-- Louis Capps : Moffat Bay Assignment : Reservation Page -->
+<!-- Louis Capps : Anthony Williams: Moffat Bay Assignment : Reservation Page -->
 <!-- Datepicker code provided by https://jqueryui.com/datepicker/ -->
-<!-- This jsp file sets up the top bar of the view screen. It can be included in other JSP's to show the top menu bar. -->
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -47,7 +46,6 @@
 					<!-- Dropdown menu for number of guests -->
 					<label for="guests">Guests: </label>
 					<select id="guests" name="guests" required>
-						<option value="null"></option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -58,7 +56,6 @@
 					<!-- Dropdown menu for Room Size -->
 					<label for="roomSize">Room Size: </label>
 					<select id="roomSize" name="roomSize" required>
-						<option value="null"></option>
 						<option value="doubleFullBed">Double Full Bed</option>
 						<option value="queen">Queen</option>
 						<option value="doubleQueenBeds">Double Queen Beds</option>
