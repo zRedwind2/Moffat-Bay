@@ -61,8 +61,8 @@ public class ReservationSummaryServlet extends HttpServlet {
                 String sql = "INSERT INTO Bookings (Account_ID, Room_ID, Occupancy, Booking_Date, Check_In, Check_Out) VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
-                int accountId = 1;
-                int roomId = 1;
+                int accountId = 1; // Example Account_ID, replace with actual value
+                int roomId = Integer.parseInt(roomSize); // Use the roomSize parameter as Room_ID
 
                 // Use the current date for the Booking_Date
                 java.sql.Date bookingDate = java.sql.Date.valueOf(LocalDate.now());
@@ -93,3 +93,4 @@ public class ReservationSummaryServlet extends HttpServlet {
         }
     }
 }
+
