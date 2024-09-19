@@ -1,6 +1,5 @@
-<!-- Anthony Williams : Moffat Bay Assignment : Registration Page -->
+<!-- Anthony Williams: Brett Stovall: Moffat Bay Assignment : Registration Page -->
 <!-- This JSP sets up the Registration Page. -->
-<!-- Brett Stovall updated the page to have a pop-up showing you are registered -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -91,12 +90,12 @@
             </form>
 
             <!-- Success Popup -->
-            <div id="successPopup" class="popup">
+            <div id="successPopup" class="popup" style="display: none;">
                 <div class="popup-content">
                     <span class="close">×</span>
                     <h2>Registration Successful!</h2>
                     <p>Your account has been created successfully.</p>
-                    <a href="${pageContext.request.contextPath}/LandingPage.jsp" class="button">Go to Landing Page</a>
+                    <a href="${pageContext.request.contextPath}/jsp/Landing Page.jsp" class="button">Go to Landing Page</a>
                 </div>
             </div>
         </div>
@@ -130,11 +129,9 @@
             }
         }
 
-        <% if (request.getAttribute("registrationSuccess") != null) { %>
+        <% if (request.getAttribute("registrationSuccess") != null && (Boolean) request.getAttribute("registrationSuccess")) { %>
             showSuccessPopup();
         <% } %>
     </script>
 </body>
 </html>
-
-
