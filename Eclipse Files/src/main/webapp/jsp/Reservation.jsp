@@ -45,17 +45,20 @@
                 let imagePath = '';
 
                 switch (selectedRoom) {
-                    case 'doubleFullBed':
+                    case '1':
                         imagePath = '${pageContext.request.contextPath}/images/double-full.jpg';
                         break;
-                    case 'queen':
+                    case '2':
                         imagePath = '${pageContext.request.contextPath}/images/QueenBed.jpg';
                         break;
-                    case 'doubleQueenBeds':
+                    case '3':
                         imagePath = '${pageContext.request.contextPath}/images/DoubleQueen.jpg';
                         break;
-                    case 'king':
+                    case '4':
                         imagePath = '${pageContext.request.contextPath}/images/KingBed.jpg';
+                        break;
+                    default:
+                        imagePath = ''; // Handle unexpected values
                         break;
                 }
 
@@ -102,10 +105,10 @@
                     <br/>
                     <label for="roomSize">Room Size: </label>
                     <select id="roomSize" name="roomSize" required>
-                        <option value="doubleFullBed">Double Full Bed</option>
-                        <option value="queen">Queen</option>
-                        <option value="doubleQueenBeds">Double Queen Beds</option>
-                        <option value="king">King</option>
+                        <option value="1">Double Full Bed</option>
+                        <option value="2">Queen</option>
+                        <option value="3">Double Queen Beds</option>
+                        <option value="4">King</option>
                     </select>
                     <br/>
                     <label for="checkIn">Check-In: </label>
