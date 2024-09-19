@@ -52,10 +52,10 @@ body {
 /* Button Styles */
 .button-container button {
     padding: 10px 20px; /* Adds padding inside the buttons */
-    border: none; /* Removes the border */
+    border: 2px solid #344e41; /* Adds a border around the buttons */
     border-radius: 5px; /* Rounds the corners of the buttons */
     cursor: pointer; /* Changes cursor to pointer on hover */
     font-size: 16px; /* Sets the font size for buttons */
-    background-color: #3a5a40; /* Sets the background color for buttons */
+    background-color: #dad7cd; /* Sets the background color for buttons */
     color: #fff; /* Sets the text color for buttons */
 }
