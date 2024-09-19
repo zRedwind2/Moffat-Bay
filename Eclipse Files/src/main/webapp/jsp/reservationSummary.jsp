@@ -27,36 +27,57 @@
             String checkIn = request.getParameter("checkIn");
             String checkOut = request.getParameter("checkOut");
             String room = null;
-           	double price = 0;
-            
+            double pricePerNight = 0;
+            double totalPrice = 0;
+
             if (roomSize == null || guests == null || checkIn == null || checkOut == null) {
                 roomSize = (String) request.getAttribute("roomSize");
                 guests = (String) request.getAttribute("guests");
                 checkIn = (String) request.getAttribute("checkIn");
                 checkOut = (String) request.getAttribute("checkOut");
             }
+
             int guestNumber = Integer.parseInt(guests);
-            if (guestNumber <= 2){
-            	price = 120.75;
+            if (guestNumber <= 2) {
+                pricePerNight = 120.75;
+            } else if (guestNumber >= 3) {
+                pricePerNight = 157.50;
             }
-            if (guestNumber >= 3){
-            	price = 157.50;
-            }
-            
+
             switch (roomSize) {
-            case "doubleFullBed":
-            	room = "Double Full Beds";
-            	break;
-            case "queen":
-            	room = "Queen";
-            	break;
-            case "doubleQueenBeds":
-            	room = "Double Queen Beds";
-            	break;
-            case "king":
-            	room = "king";
-            	break;
+                case "doubleFullBed":
+                    room = "Double Full Beds";
+                    break;
+                case "queen":
+                    room = "Queen";
+                    break;
+                case "doubleQueenBeds":
+                    room = "Double Queen Beds";
+                    break;
+                case "king":
+                    room = "King";
+                    break;
             }
+
+            // Calculate the difference in days between check-in and check-out dates
+            String[] checkInParts = checkIn.split("/");
+            String[] checkOutParts = checkOut.split("/");
+            int checkInMonth = Integer.parseInt(checkInParts[0]);
+            int checkInDay = Integer.parseInt(checkInParts[1]);
+            int checkInYear = Integer.parseInt(checkInParts[2]);
+            int checkOutMonth = Integer.parseInt(checkOutParts[0]);
+            int checkOutDay = Integer.parseInt(checkOutParts[1]);
+            int checkOutYear = Integer.parseInt(checkOutParts[2]);
+
+            java.util.Calendar checkInDate = java.util.Calendar.getInstance();
+            checkInDate.set(checkInYear, checkInMonth - 1, checkInDay); // Month is 0-based in Calendar
+            java.util.Calendar checkOutDate = java.util.Calendar.getInstance();
+            checkOutDate.set(checkOutYear, checkOutMonth - 1, checkOutDay);
+
+            long diffInMillies = Math.abs(checkOutDate.getTimeInMillis() - checkInDate.getTimeInMillis());
+            long diff = java.util.concurrent.TimeUnit.DAYS.convert(diffInMillies, java.util.concurrent.TimeUnit.MILLISECONDS);
+
+            totalPrice = diff * pricePerNight;
         %>
 
         <!-- Display reservation details -->
@@ -66,8 +87,9 @@
             <p>Guests: <%= guests %></p>
             <p>Check-in Date: <%= checkIn %></p>
             <p>Check-out Date: <%= checkOut %></p>
-            <p>Price: <%= price %></p>
-
+            <p>Price per Night: $<%= pricePerNight %></p>
+            <p>Total Price: $<%= totalPrice %></p>
+        </div>
 
         <div class="button-container">
             <!-- Cancel button -->
@@ -84,7 +106,6 @@
                 <button type="submit" name="action" value="submit" class="submit-button">Submit</button>
             </form>
         </div>
-                </div>
     </div>
 </body>
 </html>
