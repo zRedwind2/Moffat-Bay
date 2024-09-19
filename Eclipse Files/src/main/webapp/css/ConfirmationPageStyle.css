@@ -1,0 +1,20 @@
+/* General body styling */
+body {
+    background-color: #3a5a40; /* Background color */
+    color: #dad7cd; /* Text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Ensure all text elements inherit the text color */
+h1, h2, h3, h4, h5, h6, p, a, span, div {
+    color: #dad7cd;
+}
+a {
+    color: #dad7cd; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the link bold */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
