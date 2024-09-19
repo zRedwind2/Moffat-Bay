@@ -45,17 +45,20 @@
             }
 
             switch (roomSize) {
-                case "doubleFullBed":
+                case "1":
                     room = "Double Full Beds";
                     break;
-                case "queen":
+                case "2":
                     room = "Queen";
                     break;
-                case "doubleQueenBeds":
+                case "3":
                     room = "Double Queen Beds";
                     break;
-                case "king":
+                case "4":
                     room = "King";
+                    break;
+                default:
+                    room = "Unknown";
                     break;
             }
 
