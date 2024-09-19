@@ -1,5 +1,6 @@
 <!-- Anthony Williams : Moffat Bay Assignment : Registration Page -->
 <!-- This JSP sets up the Registration Page. -->
+<!-- Brett Stovall updated the page to have a pop-up showing you are registered -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -76,7 +77,7 @@
                     <label for="togglePassword">Show Password</label>
                 </div>
 
-                <button type="submit" >Submit</button>
+                <button type="submit">Submit</button>
 
                 <!-- Display error message if set -->
                 <%
@@ -88,6 +89,16 @@
                     }
                 %>
             </form>
+
+            <!-- Success Popup -->
+            <div id="successPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">×</span>
+                    <h2>Registration Successful!</h2>
+                    <p>Your account has been created successfully.</p>
+                    <a href="${pageContext.request.contextPath}/LandingPage.jsp" class="button">Go to Landing Page</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,6 +112,29 @@
                 passwordField.type = 'password'; // Hide password
             }
         });
+
+        function showSuccessPopup() {
+            var popup = document.getElementById("successPopup");
+            popup.style.display = "block";
+        }
+
+        document.querySelector(".close").onclick = function() {
+            var popup = document.getElementById("successPopup");
+            popup.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var popup = document.getElementById("successPopup");
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+
+        <% if (request.getAttribute("registrationSuccess") != null) { %>
+            showSuccessPopup();
+        <% } %>
     </script>
 </body>
 </html>
+
+
