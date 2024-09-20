@@ -16,6 +16,14 @@
   <a href="/Moffat_Bay/jsp/Landing Page.jsp">Home</a>
   <a href="/Moffat_Bay/jsp/AboutUs.jsp">About Us</a>
   <a href="#Attractions">Attractions</a>
+<% if (session.getAttribute("userUsername") != null) { %>
+    Hello ${sessionScope.userUsername}
+    <form action="logout" method="get"> 
+    <input type="submit" value="Logout" /> 
+    </form>
+<% } else { %>
+    Please log in.
+<% } %>
   <!-- Creating a div class for the dropdown menu -->
   <div class="dropdown">
   	<!-- Adding a button for the dropdown menu -->

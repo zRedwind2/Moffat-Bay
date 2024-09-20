@@ -2,7 +2,6 @@
 
 package moffat.beans;
 import moffat.utils.PasswordUtils;
-import moffat.beans.UserSession;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -17,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -31,7 +31,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         
-        String enteredUsername = request.getParameter("username");     
+        HttpSession session = request.getSession(); 
+        String enteredUsername = request.getParameter("username");    
         String enteredPassword = request.getParameter("password");
         
         Connection con = null;
@@ -40,7 +41,8 @@ public class LoginServlet extends HttpServlet {
         
         String rsPass = null;
         byte[] rsSalt = null;
-        int rsUser = 0;
+        int rsAcc = 0;
+        String user = null;
         
         try { 
         con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
@@ -51,19 +53,19 @@ public class LoginServlet extends HttpServlet {
         //retrieves hashed password and salt from database
         rsPass = resultSet.getString("Password");
         rsSalt = resultSet.getBytes("Salt");
-        rsUser = resultSet.getInt("Account_ID");
-
+        rsAcc = resultSet.getInt("Account_ID");
+        user = resultSet.getString("Username");
+        
         }
+        
         try {
         boolean test = PasswordUtils.verifyPassword(enteredPassword, rsPass, rsSalt);
-        UserSession userSession = new UserSession();
         if (test == true) {
-            
-        userSession.setAccountID(rsUser);
-        userSession.setLoggedIn(true);
         //create session
-        response.getWriter().println(userSession.getAccountID());
-        response.getWriter().println(userSession.getLoggedIn());
+        
+        session.setAttribute("userUsername", user); 
+        session.setAttribute("userAccount", rsAcc);
+
         response.getWriter().println("Login Successful!");
         request.getRequestDispatcher("/jsp/Landing Page.jsp").forward(request, response);
 

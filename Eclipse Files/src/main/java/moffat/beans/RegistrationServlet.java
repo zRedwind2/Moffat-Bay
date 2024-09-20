@@ -21,7 +21,7 @@ public class RegistrationServlet extends HttpServlet {
 
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/MoffatBayLodge";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "root";
+    private static final String JDBC_PASSWORD = "pass";
 
     // Updated SQL statement to include address fields and username
     private static final String INSERT_USER_SQL = 

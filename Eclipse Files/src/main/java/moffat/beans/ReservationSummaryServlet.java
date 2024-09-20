@@ -22,7 +22,7 @@ public class ReservationSummaryServlet extends HttpServlet {
     // Database connection
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/MoffatBayLodge";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "root";
+    private static final String JDBC_PASSWORD = "pass";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,7 +83,6 @@ public class ReservationSummaryServlet extends HttpServlet {
                 request.setAttribute("errorMessage", "Database error occurred while processing your reservation.");
                 request.getRequestDispatcher("/jsp/reservationSummary.jsp").forward(request, response);
             }
-
         } else if ("cancel".equals(action)) {
             // Log cancellation
             System.out.println("Cancel Action");
