@@ -5,75 +5,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Reservation</title>
-	<!-- Link to main.css for other page styles -->
-    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/main.css">
-    <!-- Link to main.css for other page styles -->
-    <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/Reservation.css">
-    <!-- Includes TopMenu.jsp for the top navigation bar. -->
+    <meta charset="ISO-8859-1">
+    <title>Reservation</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Reservation.css">
     <jsp:include page="TopMenu.jsp" flush="true" />
-    <!-- Link to bottomNav.css for footer Navigation bar -->
     <jsp:include page="BottomMenu.jsp" flush="true" />
-    
-    <!-- Datepicker code from https://jqueryui.com/datepicker/ -->
-  	<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
-  	<link rel="stylesheet" href="/resources/demos/style.css">
-  	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-  	<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
-  	<script>
-  		$( function() {
-    		$( "#checkIn" ).datepicker();
-  		} );
-  		$( function() {
-    		$( "#checkOut" ).datepicker();
-  		} );
-  	</script>
-  	<!-- End of Datepicker code -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            const today = new Date();
+            const tomorrow = new Date();
+            tomorrow.setDate(today.getDate() + 1);
 
+            $("#checkIn").datepicker({
+                minDate: today,
+                onSelect: function(selectedDate) {
+                    const checkInDate = $(this).datepicker("getDate");
+                    $("#checkOut").datepicker("option", "minDate", new Date(checkInDate.getTime() + 24 * 60 * 60 * 1000));
+                    calculateTotalPrice();
+                }
+            });
+
+            $("#checkOut").datepicker({
+                minDate: tomorrow,
+                onSelect: function(selectedDate) {
+                    const checkOutDate = $(this).datepicker("getDate");
+                    $("#checkIn").datepicker("option", "maxDate", new Date(checkOutDate.getTime() - 24 * 60 * 60 * 1000));
+                    calculateTotalPrice();
+                }
+            });
+
+            $('#roomSize').change(function() {
+                const roomImage = $('#roomImage');
+                const selectedRoom = $(this).val();
+                let imagePath = '';
+
+                switch (selectedRoom) {
+                    case '1':
+                        imagePath = '${pageContext.request.contextPath}/images/double-full.jpg';
+                        break;
+                    case '2':
+                        imagePath = '${pageContext.request.contextPath}/images/QueenBed.jpg';
+                        break;
+                    case '3':
+                        imagePath = '${pageContext.request.contextPath}/images/DoubleQueen.jpg';
+                        break;
+                    case '4':
+                        imagePath = '${pageContext.request.contextPath}/images/KingBed.jpg';
+                        break;
+                    default:
+                        imagePath = ''; // Handle unexpected values
+                        break;
+                }
+
+                console.log("Image path: " + imagePath); // Debugging line
+                roomImage.attr('src', imagePath).show();
+            });
+
+            // Trigger change event on page load to ensure image updates correctly
+            $('#roomSize').trigger('change');
+        });
+
+        function calculateTotalPrice() {
+            const checkInDate = $("#checkIn").datepicker("getDate");
+            const checkOutDate = $("#checkOut").datepicker("getDate");
+            const guests = $("#guests").val();
+            const pricePerNight = guests <= 2 ? 120.75 : 157.50;
+
+            if (checkInDate && checkOutDate) {
+                const timeDiff = Math.abs(checkOutDate - checkInDate);
+                const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                const totalPrice = diffDays * pricePerNight;
+                $("#totalPrice").text("Total Price: $" + totalPrice);
+            }
+        }
+    </script>
 </head>
 <body>
-	<div class="container">
-		<h1>Make a Reservation</h1>
-		<div class="menus-image">
-			<div class = "images">
-				<img src="/Moffat_Bay/images/double-full.jpg" alt="Image" id="roomImage">
-			</div>
-			
-			<!-- Form to submit reservation data -->
-			<form action="${pageContext.request.contextPath}/ReservationServlet" method="post">
-				<div class = "dropdown-menus">
-					<!-- Dropdown menu for number of guests -->
-					<label for="guests">Guests: </label>
-					<select id="guests" name="guests" required>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
-					<br/>
-					<!-- Dropdown menu for Room Size -->
-					<label for="roomSize">Room Size: </label>
-					<select id="roomSize" name="roomSize" required>
-						<option value="doubleFullBed">Double Full Bed</option>
-						<option value="queen">Queen</option>
-						<option value="doubleQueenBeds">Double Queen Beds</option>
-						<option value="king">King</option>
-					</select>
-					<br/>
-					<!-- Check-in and Check-out dates -->
-					<label for="checkIn">Check-In: </label>
-					<input type="text" id="checkIn" name="checkIn" required><br/>
-					<label for="checkOut">Check-Out: </label>
-					<input type="text" id="checkOut" name="checkOut" required><br/>
-				</div>
-				<div class = "total-button">
-					<h2>Total Price: $$$<!-- Insert code calculations here for total price --></h2>
-					<button type="submit">Book Now!</button>
-				</div>
-			</form>
-		</div>
-	</div>
+    <div class="container">
+        <h1>Make a Reservation</h1>
+        <div class="menus-image">
+            <div class="images">
+                <img id="roomImage" src="" alt="Room Image" style="width: 100%; max-width: 250px; display: none;">
+            </div>
+            <form action="${pageContext.request.contextPath}/ReservationServlet" method="post">
+                <div class="dropdown-menus">
+                    <label for="guests">Guests: </label>
+                    <select id="guests" name="guests" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br/>
+                    <label for="roomSize">Room Size: </label>
+                    <select id="roomSize" name="roomSize" required>
+                        <option value="1">Double Full Bed</option>
+                        <option value="2">Queen</option>
+                        <option value="3">Double Queen Beds</option>
+                        <option value="4">King</option>
+                    </select>
+                    <br/>
+                    <label for="checkIn">Check-In: </label>
+                    <input type="text" id="checkIn" name="checkIn" required><br/>
+                    <label for="checkOut">Check-Out: </label>
+                    <input type="text" id="checkOut" name="checkOut" required><br/>
+                </div>
+                <div class="total-button">
+                    <h2 id="totalPrice">Total Price: $0</h2>
+                    <button type="submit">Book Now!</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

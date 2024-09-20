@@ -42,7 +42,7 @@
                     	<img src="/Moffat_Bay/images/pexels-hikaique-775201.jpg" alt="Link 1 Image" class="image-small">
                     	<!-- A button div class is used for the buttons on the page. -->
 						<div class="button">
-                        	<button>Moffat Bay Lodge Info</button>
+                        	<button onclick="location.href='/Moffat_Bay/jsp/AboutUs.jsp'">Moffat Bay Lodge 
                         </div>
                     </div>
                 </div>
