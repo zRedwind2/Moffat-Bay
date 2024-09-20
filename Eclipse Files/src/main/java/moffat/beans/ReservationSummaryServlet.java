@@ -83,7 +83,6 @@ public class ReservationSummaryServlet extends HttpServlet {
                 request.setAttribute("errorMessage", "Database error occurred while processing your reservation.");
                 request.getRequestDispatcher("/jsp/reservationSummary.jsp").forward(request, response);
             }
-
         } else if ("cancel".equals(action)) {
             // Log cancellation
             System.out.println("Cancel Action");
