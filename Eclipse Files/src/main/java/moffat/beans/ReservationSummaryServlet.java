@@ -22,7 +22,7 @@ public class ReservationSummaryServlet extends HttpServlet {
     // Database connection
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/MoffatBayLodge";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "pass";
+    private static final String JDBC_PASSWORD = "root";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
