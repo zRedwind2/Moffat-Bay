@@ -49,13 +49,13 @@
                         imagePath = '${pageContext.request.contextPath}/images/double-full.jpg';
                         break;
                     case '2':
-                        imagePath = '${pageContext.request.contextPath}/images/QueenBed.jpg';
+                        imagePath = '${pageContext.request.contextPath}/images/queen.jpg';
                         break;
                     case '3':
-                        imagePath = '${pageContext.request.contextPath}/images/DoubleQueen.jpg';
+                        imagePath = '${pageContext.request.contextPath}/images/double-queen.jpg';
                         break;
                     case '4':
-                        imagePath = '${pageContext.request.contextPath}/images/KingBed.jpg';
+                        imagePath = '${pageContext.request.contextPath}/images/king.jpg';
                         break;
                     default:
                         imagePath = ''; // Handle unexpected values

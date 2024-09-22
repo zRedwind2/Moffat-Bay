@@ -1,5 +1,3 @@
-// Anthony Williams : Moffat Bay Assignment : Registration Servlet
-
 package moffat.utils;
 
 import java.security.MessageDigest;

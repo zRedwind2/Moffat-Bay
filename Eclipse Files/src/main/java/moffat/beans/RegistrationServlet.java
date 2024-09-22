@@ -1,5 +1,3 @@
-// Anthony Williams : Moffat Bay Assignment : Registration Servlet
-
 package moffat.beans;
 
 import moffat.utils.PasswordUtils;
@@ -95,7 +93,7 @@ public class RegistrationServlet extends HttpServlet {
 
             // Check if both inserts were successful
             if (rowsInsertedUser > 0 && rowsInsertedAccount > 0) {
-                response.getWriter().println("Registration successful!");
+            	response.sendRedirect(request.getContextPath() + "/jsp/confirmationPage.jsp");
             } else {
                 response.getWriter().println("Registration failed. Please try again.");
             }
