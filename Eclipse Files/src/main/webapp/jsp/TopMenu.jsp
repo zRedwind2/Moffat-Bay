@@ -15,7 +15,7 @@
   <img src="/Moffat_Bay/images/lodge.jpg" alt="Image">
   <a href="/Moffat_Bay/jsp/Landing Page.jsp">Home</a>
   <a href="/Moffat_Bay/jsp/AboutUs.jsp">About Us</a>
-  <a href="#Attractions">Attractions</a>
+  <a href="/Moffat_Bay/jsp/Attractions.jsp">Attractions</a>
 <% if (session.getAttribute("userUsername") != null) { %>
     Hello ${sessionScope.userUsername}
     <form action="logout" method="get"> 
