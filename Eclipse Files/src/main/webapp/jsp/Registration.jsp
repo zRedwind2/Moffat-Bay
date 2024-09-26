@@ -76,7 +76,7 @@
                     <label for="togglePassword">Show Password</label>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" >Submit</button>
 
                 <!-- Display error message if set -->
                 <%
@@ -88,7 +88,7 @@
                     }
                 %>
             </form>
-
+            
             <!-- Success Popup -->
             <div id="successPopup" class="popup" style="display: none;">
                 <div class="popup-content">
@@ -111,24 +111,21 @@
                 passwordField.type = 'password'; // Hide password
             }
         });
-
+        
         function showSuccessPopup() {
             var popup = document.getElementById("successPopup");
             popup.style.display = "block";
         }
-
         document.querySelector(".close").onclick = function() {
             var popup = document.getElementById("successPopup");
             popup.style.display = "none";
         }
-
         window.onclick = function(event) {
             var popup = document.getElementById("successPopup");
             if (event.target == popup) {
                 popup.style.display = "none";
             }
         }
-
         <% if (request.getAttribute("registrationSuccess") != null && (Boolean) request.getAttribute("registrationSuccess")) { %>
             showSuccessPopup();
         <% } %>

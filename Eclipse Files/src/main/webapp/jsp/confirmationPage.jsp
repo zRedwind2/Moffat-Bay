@@ -7,11 +7,8 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Reservation Confirmed</title>
-    <!-- Link to the CSS file -->
     <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/ConfirmationPageStyle.css">
-    <!-- Includes TopMenu.jsp for the top navigation bar -->
     <jsp:include page="TopMenu.jsp" flush="true" />
-    <!-- Includes BottomMenu.jsp for the bottom navigation bar -->
     <jsp:include page="BottomMenu.jsp" flush="true" />
 </head>
 <body>

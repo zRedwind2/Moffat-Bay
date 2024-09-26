@@ -6,11 +6,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column; 
+    color: #344e41;
 }
 
 .total-button {
-    flex-grow: 0; /* Prevent the button from taking up extra space */
-    align-self: flex-end; /* Align the button to the bottom */
+    flex-grow: 0;
+    align-self: flex-end;
 }
 
 .images img {
@@ -41,7 +42,7 @@
 
 .total-button button {
     display: block;
-    margin: 10px auto; /* Center the buttons */
+    margin: 10px auto;
     padding: 10px 20px;
     background-color: #344e41;
     color: #fff;
@@ -54,18 +55,18 @@
 .dropdown-menus {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    margin-bottom: 10px; /* Add spacing between form groups */
+    align-items: flex-start;
+    margin-bottom: 10px;
 }
 
 .container {
-	background-color: #dad7cd; /* Light grey background */
-    padding: 20px; /* Space between the image and the box border */
-    border: 2px solid #83836c; /* Light grey border */
-    border-radius: 5px; /* Rounded corners */
-    display: inline-block; /* Ensure the box fits around the image */
-    margin: 20px; /* Space around each box */
-    text-align: center; /* Center the content */
+	background-color: #dad7cd;
+    padding: 20px;
+    border: 2px solid #83836c;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 20px; 
+    text-align: center; 
 }
 
 .images {

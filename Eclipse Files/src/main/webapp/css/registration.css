@@ -49,8 +49,7 @@ button:hover {
     border-radius: 2px;
     color: black;
 }
-<!-- Add this CSS to your main.css or registration.css -->
-    <style>
+
 .popup {
     display: none;
     position: fixed;

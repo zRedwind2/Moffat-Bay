@@ -42,7 +42,7 @@
                     	<img src="/Moffat_Bay/images/pexels-hikaique-775201.jpg" alt="Link 1 Image" class="image-small">
                     	<!-- A button div class is used for the buttons on the page. -->
 						<div class="button">
-                        	<button onclick="location.href='/Moffat_Bay/jsp/AboutUs.jsp'">Moffat Bay Lodge 
+                        	<button onclick="location.href='/Moffat_Bay/jsp/AboutUs.jsp'">Moffat Bay Lodge</button>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                         <img src="/Moffat_Bay/images/istockphoto-135565559-612x612.jpg" alt="Link 3 Image" class="image-large no-cursor">
                         <div class="reservation-options">
                        		<!-- A button div class is used for the buttons on the page. -->
-                        	<div class="rButton">
-                            	<a href="Reservation.jsp">Make a Reservation</a>
+                        	<div class="button">
+                        		<button onclick="location.href='/Moffat_Bay/jsp/Reservation.jsp'">Make a Reservation</button>
                             </div>
                             <!-- A seperate dive class for the reservation look-up button and text fields. -->
                             <div class="reservation-inputs">
