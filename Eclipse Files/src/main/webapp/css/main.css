@@ -3,3 +3,19 @@ html {
     text-align: center;
     font-family: 'Quasimoda';
 }
+
+/* Reservation Review page */
+.room-image {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.reservation-summary {
+    padding-bottom: 60px;
+}
+
+.button-container {
+    margin-top: 20px;
+}

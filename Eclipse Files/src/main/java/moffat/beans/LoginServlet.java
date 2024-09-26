@@ -26,7 +26,6 @@ public class LoginServlet extends HttpServlet {
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "pass";
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
@@ -37,60 +36,60 @@ public class LoginServlet extends HttpServlet {
         
         Connection con = null;
         
-        String query = "SELECT * FROM account WHERE Username = '" + enteredUsername + "'";
+        String query = "SELECT * FROM Account WHERE Username = ?";
         
         String rsPass = null;
         byte[] rsSalt = null;
         int rsAcc = 0;
+        int userId = 0;  // Variable to store User_ID
         String user = null;
         
         try { 
-        con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-        PreparedStatement statement = con.prepareStatement(query);
-        ResultSet resultSet = statement.executeQuery(query); 
-        
-        while(resultSet.next()) {
-        //retrieves hashed password and salt from database
-        rsPass = resultSet.getString("Password");
-        rsSalt = resultSet.getBytes("Salt");
-        rsAcc = resultSet.getInt("Account_ID");
-        user = resultSet.getString("Username");
-        
-        }
-        
-        try {
-        boolean test = PasswordUtils.verifyPassword(enteredPassword, rsPass, rsSalt);
-        if (test == true) {
-        //create session
-        
-        session.setAttribute("userUsername", user); 
-        session.setAttribute("userAccount", rsAcc);
+            con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement statement = con.prepareStatement(query);
+            statement.setString(1, enteredUsername);
+            ResultSet resultSet = statement.executeQuery(); 
+            
+            while(resultSet.next()) {
+                // Retrieves hashed password, salt, Account_ID, and User_ID from the database
+                rsPass = resultSet.getString("Password");
+                rsSalt = resultSet.getBytes("Salt");
+                rsAcc = resultSet.getInt("Account_ID");
+                userId = resultSet.getInt("User_ID");  // Get the User_ID
+                user = resultSet.getString("Username");
+            }
+            
+            try {
+                boolean test = PasswordUtils.verifyPassword(enteredPassword, rsPass, rsSalt);
+                if (test) {
+                    // Create session attributes
+                    session.setAttribute("userUsername", user); 
+                    session.setAttribute("userAccount", rsAcc);
+                    session.setAttribute("userID", userId);  // Store User_ID in session
 
-        response.getWriter().println("Login Successful!");
-        request.getRequestDispatcher("/jsp/Landing Page.jsp").forward(request, response);
+                    response.getWriter().println("Login Successful!");
+                    request.getRequestDispatcher("/jsp/Landing Page.jsp").forward(request, response);
 
-        
-        }else{
-        response.getWriter().println("Incorrect Password, Try Again!");
-        
-        }
-        } catch (NoSuchAlgorithmException e) {
-        	e.printStackTrace();
-            response.getWriter().println("Error hashing password. Please try again.");
-            return;
-        }
+                } else {
+                    response.getWriter().println("Incorrect Password, Try Again!");
+                }
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+                response.getWriter().println("Error hashing password. Please try again.");
+                return;
+            }
 
-        }catch (SQLException e) {
-        e.printStackTrace();
-        response.getWriter().println("Error Connecting to Database: " + e.getMessage());
-        }finally {
-        if (con != null) {
+        } catch (SQLException e) {
+            e.printStackTrace();
+            response.getWriter().println("Error Connecting to Database: " + e.getMessage());
+        } finally {
+            if (con != null) {
                 try {
                     con.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+            }
         }
-        }
-}
+    }
 }
