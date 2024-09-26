@@ -1,0 +1,102 @@
+/* Centers the page title and styles it */
+.PageTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles the h1 element within the PageTitle class */
+.PageTitle h1 {
+    width: fit-content;
+    background-color: #3A5A40;
+    padding: 30px 25px;
+    border-radius: 15px;
+}
+
+/* Styles the Overview container */
+.Overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Styles the OverviewText container */
+.OverviewText {
+    width: 40%;
+    text-align: center;
+    font-size: 4.5em; /* Increase the font size */
+}
+
+/* Styles the OverviewImages container */
+.OverviewImages {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: space-around;
+}
+
+/* Styles the ImagePlaceholder class for the image placeholders */
+.ImagePlaceholder {
+    width: 45%;
+    height: 200px;
+    background-color: #3A5A40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #3A5A40;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+/* Styles the large ImagePlaceholder class for larger images */
+.ImagePlaceholder.large {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+}
+
+/* Styles the AttractionSection container */
+.AttractionSection {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Reverses the order of elements in the AttractionSection */
+.AttractionSection.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Styles the Description container */
+.Description {
+    width: 50%;
+    padding: 20px;
+}
+
+/* General styles for images to ensure they are responsive */
+img {
+    width: 60%;
+    height: 80%;
+    border-radius: 15px;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Sets the background color and font for the entire HTML document */
+html {
+    background-color: #3A5A40;
+    font-family: 'Quasimoda';
+}
+
+/* Sets the text color for all elements within the HTML document */
+html * {
+    color: #DAD7CD;
+}
+
+/* Styles the figcaption element */
+figcaption {
+    font-style: italic;
+    padding: 5px;
+    text-align: center;
+}

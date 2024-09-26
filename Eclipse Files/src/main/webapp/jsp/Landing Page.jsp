@@ -53,7 +53,7 @@
                         <img src="/Moffat_Bay/images/pexels-rich-howard-1910092-12084941.jpg" alt="Link 2 Image" class="image-medium">
                         <!-- A button div class is used for the buttons on the page. -->
 						<div class="button">
-                        	<button>Attractions</button>
+                        	<button onclick="location.href='/Moffat_Bay/jsp/Attractions.jsp'">Attractions
                         </div>
                     </div>
                 </div>
