@@ -75,8 +75,12 @@
                     <input type="checkbox" id="togglePassword"> 
                     <label for="togglePassword">Show Password</label>
                 </div>
-
-                <button type="submit" >Submit</button>
+                    <% if (session.getAttribute("userUsername") != null) { %>
+                    <h2>Please logout to make an account</h2>
+					<% } else { %>
+					<button type="submit" >Submit</button>
+					<% } %>
+                
 
                 <!-- Display error message if set -->
                 <%

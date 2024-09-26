@@ -27,6 +27,16 @@
 	padding-right: 10px; /* Adds padding around the image */
 }
 
+.username {
+	float:left;
+	color: #344e41; /* Changes the font color */
+  	text-align: center; /* Aligns the text to the center of the link */
+  	padding: 20px 16px; /* Makes the link a 20px by 16px box */
+  	text-decoration: none;
+  	font-weight: bold; /* Bolds the text */
+  	font-size: 17px; /* Changes the font size */
+  	overflow: hidden; /* Clear the float */
+}
 /* The dropdown container for the dropdown links */
 .dropdown {
   float: right; /* Floats the dropdown container to the right */
