@@ -16,14 +16,12 @@
   <a href="/Moffat_Bay/jsp/Landing Page.jsp">Home</a>
   <a href="/Moffat_Bay/jsp/AboutUs.jsp">About Us</a>
   <a href="/Moffat_Bay/jsp/Attractions.jsp">Attractions</a>
+  <div class="username">
 <% if (session.getAttribute("userUsername") != null) { %>
     Hello ${sessionScope.userUsername}
-    <form action="logout" method="get"> 
-    <input type="submit" value="Logout" /> 
-    </form>
-<% } else { %>
-    Please log in.
 <% } %>
+
+	</div>
   <!-- Creating a div class for the dropdown menu -->
   <div class="dropdown">
   	<!-- Adding a button for the dropdown menu -->
@@ -34,8 +32,13 @@
     </button>
     <!-- Setting up the dropdown content div class to hold the links -->
     <div class="dropdown-content">
+    <% if (session.getAttribute("userUsername") != null) { %>
+	  <a href="${pageContext.request.contextPath}/logout">Logout</a>
+	  <a href="/Moffat_Bay/jsp/account.jsp">Account</a>
+	<% } else { %>
       <a href="/Moffat_Bay/jsp/login.jsp">Login</a>
       <a href="/Moffat_Bay/jsp/Registration.jsp">Registration</a>
+	<% } %>
       <a href="/Moffat_Bay/jsp/Reservation.jsp">Reservation</a>
       <a href="/Moffat_Bay/jsp/lookupReservation.jsp">Reservation Lookup</a>
     </div>
