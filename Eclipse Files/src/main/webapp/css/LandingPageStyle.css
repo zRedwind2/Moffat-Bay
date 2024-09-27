@@ -19,6 +19,19 @@ h1 {
     font-size: 5.5em;
 }
 
+.header {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fishf img {
+	width: 200px;
+}
+
+.fishb img {
+	width: 200px;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

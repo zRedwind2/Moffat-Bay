@@ -21,8 +21,15 @@
 <body>
     <div class="wrapper">
         <div class="body-content">
-            <h1>Moffat Bay Lodge</h1>
-            
+        	<div class = "header">
+            	<div class = "fishb">
+        		<img src="/Moffat_Bay/images/fishb.png">
+        		</div>
+            	<h1>Moffat Bay Lodge</h1>
+        		<div class = "fishf">
+        		<img src="/Moffat_Bay/images/fishf.png">
+        		</div>
+            </div>
             <!-- Image and text blurb about Moffat Bay Lodge. -->
             <p>
                 <img src="/Moffat_Bay/images/landing_page1.png" alt="Moffat Bay Lodge" class="landing-page-image"><br />
