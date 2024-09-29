@@ -93,7 +93,7 @@ public class RegistrationServlet extends HttpServlet {
 
             // Check if both inserts were successful
             if (rowsInsertedUser > 0 && rowsInsertedAccount > 0) {
-            	response.sendRedirect(request.getContextPath() + "/jsp/confirmationPage.jsp");
+            	response.sendRedirect(request.getContextPath() + "/jsp/registrationConfirmation.jsp");
             } else {
                 response.getWriter().println("Registration failed. Please try again.");
             }
