@@ -1,0 +1,97 @@
+/* Styles for the top navigation bar */
+.top-nav {
+    width: 100%; /* or any specific width you want */
+    max-width: 1200px; /* example max width */
+    margin: 0 auto; /* center the nav bar */
+}
+
+/* Styles for the landing page image */
+.landing-page-image {
+    width: 100%;
+    max-width: 1200px; /* same as the nav bar */
+    margin: 0 auto; /* center the image */
+    height: auto;
+}
+
+/* General body styles */
+body {
+    background-color: #3a5a40;
+    color: #dad7cd;
+    font-family: Arial, sans-serif;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* Content container styles */
+.content-container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Styles for the image row */
+.image-row {
+    display: flex;
+    justify-content: center; /* Center the images */
+    gap: 20px; /* Space between images */
+    margin-bottom: 20px;
+}
+
+/* Styles for the above description images */
+.above-description1,
+.above-description2 {
+    width: 48%; /* Adjust width as needed */
+    height: auto;
+    resize: both;
+    overflow: auto;
+}
+
+/* Styles for the below description image */
+.below-description {
+    width: 48%; /* Adjust width to match above-description images */
+    height: auto;
+    resize: both;
+    overflow: auto;
+}
+
+/* Styles for the content box */
+.content-box {
+    text-align: center;
+    width: 90%; /* Make the box wider */
+    max-width: 800px;
+}
+
+/* Styles for the main heading */
+.main-heading {
+    color: #dad7cd; /* Change color to #dad7cd */
+    margin-bottom: 10px;
+}
+
+/* Styles for the sub heading */
+.sub-heading {
+    color: #dad7cd; /* Change color to #dad7cd */
+    margin-bottom: 20px;
+}
+
+/* Styles for the description box */
+.description-box {
+    background-color: #dad7cd;
+    color: #344e41;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    resize: both;
+    overflow: auto;
+}
+
+/* Styles for the description text */
+.description {
+    color: #344e41;
+}

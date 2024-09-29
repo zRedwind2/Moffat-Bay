@@ -1,0 +1,243 @@
+html {
+    background-color: #3a5a40;
+    text-align: center;
+    font-family: 'Quasimoda';
+}
+
+
+.wrapper, .body-content {
+    margin: 0;
+    padding: 0;
+    border: 0; /* Ensure no border is applied */
+    outline: none; /* Remove any outline that might appear as a border */
+}
+
+h1 {
+    font-family: 'canto-brush-open', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.5em;
+}
+
+.header {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fishf img {
+	width: 200px;
+}
+
+.fishb img {
+	width: 200px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.landing-page-image {
+    width: 100%;
+    opacity: 1.00;
+    float: left;
+    margin: 5px;    
+}
+
+.body-content {
+    position: relative;
+    padding: 15px;
+    margin: 0 auto;
+    width: 80%;
+    font-family: 'Quasimoda';
+    z-index: 2;
+    box-shadow: 0px 0px 0px rgba(85, 77, 65, 0.40);
+}
+
+.body-content p {
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.background-image {
+    float: right;
+    z-index: 1;
+    grid-column: 4;
+    margin-right: 150px;
+}
+
+/* General link styling */
+.rButton a {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #344e41;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 200px;
+}
+
+/* Hover effect for links */
+.rButton a:hover {
+	background-color: #588157;
+}
+
+/* Resize images */
+img {
+    max-width: 100%; /* Ensure the image scales down to fit its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Specific styling for your links' images */
+.links img {
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Styling for link items */
+.link-item {
+    text-align: center;
+    margin-bottom: 20px;
+    display: inline-block; /* Ensure items are side by side */
+    position: relative; /* Needed for positioning text over image */
+}
+
+.link-item a {
+    display: block;
+    margin-bottom: 10px; /* Space between text and image */
+}
+
+/* Individual image sizes */
+.image-small {
+    width: 100%; /* Adjust as needed */
+    height: auto;
+}
+
+.image-medium {
+    width: 100%; /* Adjust as needed */
+    height: auto;
+}
+
+.image-large {
+    width: 100%; /* Adjust as needed */
+    height: auto;
+}
+
+/* Example for resizing the background image */
+.background-image img {
+    width: 100%; /* Make the background image take up the full width of its container */
+    height: Auto; /* Maintain aspect ratio */
+}
+
+.social-media {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.social-media a {
+    padding: 20px;
+}
+
+/* Add the new image-box class */
+.image-box {
+    background-color: #dad7cd; /* Light grey background */
+    padding: 15px; /* Space between the image and the box border */
+    border: 2px solid #83836c; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensure the box fits around the image */
+    margin: 20px; /* Space around each box */
+    text-align: center; /* Center the content */
+}
+
+/* Specific sizes for each image box */
+.image-box-small {
+    width: 350px; /* Adjust as needed */
+}
+
+.image-box-medium {
+    width: 350px; /* Adjust as needed */
+}
+
+.image-box-large {
+    width: 400px; /* Adjust as needed */
+}
+
+/* Style for the reservation options */
+.reservation-options {
+    margin-top: 20px; /* Space between the image and the buttons */
+}
+
+.button button {
+    display: block;
+    margin: 10px auto; /* Center the buttons */
+    padding: 10px 20px;
+    background-color: #344e41;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button button:hover{
+    background-color: #588157;
+} 
+
+.reservation-inputs {
+	border: 2px solid #344e41;
+    margin-top: 15px; /* Space between the buttons and the inputs */
+    color: #344e41;
+    font-weight: bold;
+}
+
+.reservation-inputs label {
+
+	color: #344e41;
+    display: block;
+    margin: 2px 0 2px;
+}
+
+.reservation-inputs input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #83836c;
+    border-radius: 2px;
+    color: black;
+}
+
+.reservation-inputs button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #344e41;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reservation-inputs button:hover {
+    background-color: #588157;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .body-content {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+}
