@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.util.Random;
 
 @WebServlet("/ReservationSummaryServlet")
 public class ReservationSummaryServlet extends HttpServlet {
@@ -37,39 +38,11 @@ public class ReservationSummaryServlet extends HttpServlet {
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        String bookingIdParam = request.getParameter("bookingId");
 
-        // Check if bookingId is provided for fetching reservation details
-        if (bookingIdParam != null && !bookingIdParam.isEmpty()) {
-            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-                String sql = "SELECT b.Booking_ID, b.Check_In, b.Check_Out, b.Occupancy, r.Room_Size, r.Image_Path "
-                           + "FROM Bookings b "
-                           + "JOIN Room r ON b.Room_ID = r.Room_ID "
-                           + "WHERE b.Booking_ID = ?";
-                
-                PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setInt(1, Integer.parseInt(bookingIdParam));
-                ResultSet rs = stmt.executeQuery();
-
-                if (rs.next()) {
-                    request.setAttribute("roomSize", rs.getString("Room_Size"));
-                    request.setAttribute("guests", rs.getInt("Occupancy"));
-                    request.setAttribute("checkIn", rs.getDate("Check_In").toString());
-                    request.setAttribute("checkOut", rs.getDate("Check_Out").toString());
-                    request.setAttribute("imagePath", rs.getString("Image_Path"));
-                }
-                request.getRequestDispatcher("/jsp/reservationSummary.jsp").forward(request, response);
-                return;
-            } catch (SQLException e) {
-                e.printStackTrace();
-                request.setAttribute("errorMessage", "Error retrieving reservation details.");
-                request.getRequestDispatcher("/jsp/reservationSummary.jsp").forward(request, response);
-                return;
-            }
-        }
-
-        // Existing submit and cancel logic
         if ("submit".equals(action)) {
+            // Generate a unique 10-digit booking ID
+            String bookingId = generateUniqueBookingId();
+
             // Retrieve reservation details from the summary page
             String roomSize = request.getParameter("roomSize");
             String guests = request.getParameter("guests");
@@ -107,7 +80,7 @@ public class ReservationSummaryServlet extends HttpServlet {
 
             // Insert the reservation into the database
             try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-                String sql = "INSERT INTO Bookings (Account_ID, Room_ID, User_ID, Occupancy, Booking_Date, Check_In, Check_Out) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO Bookings (Booking_ID, Account_ID, Room_ID, User_ID, Occupancy, Booking_Date, Check_In, Check_Out) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement stmt = conn.prepareStatement(sql);
 
                 int roomId = Integer.parseInt(roomSize); // Use the roomSize parameter as Room_ID
@@ -115,18 +88,19 @@ public class ReservationSummaryServlet extends HttpServlet {
                 // Use the current date for the Booking_Date
                 java.sql.Date bookingDate = java.sql.Date.valueOf(LocalDate.now());
 
-                stmt.setInt(1, accountId);
-                stmt.setInt(2, roomId);
-                stmt.setInt(3, userId); // Set the User_ID
-                stmt.setInt(4, Integer.parseInt(guests)); // Track Occupancy dynamically
-                stmt.setDate(5, bookingDate);  // Set the booking date
-                stmt.setDate(6, checkInDate);  // Use parsed date for check-in
-                stmt.setDate(7, checkOutDate); // Use parsed date for check-out
+                stmt.setString(1, bookingId);  // Set the generated booking ID
+                stmt.setInt(2, accountId);
+                stmt.setInt(3, roomId);
+                stmt.setInt(4, userId); // Set the User_ID
+                stmt.setInt(5, Integer.parseInt(guests)); // Track Occupancy dynamically
+                stmt.setDate(6, bookingDate);  // Set the booking date
+                stmt.setDate(7, checkInDate);  // Use parsed date for check-in
+                stmt.setDate(8, checkOutDate); // Use parsed date for check-out
 
                 stmt.executeUpdate();
 
-                // Redirect to confirmation page
-                response.sendRedirect(request.getContextPath() + "/jsp/confirmationPage.jsp");
+                // Redirect to confirmation page with booking ID
+                response.sendRedirect(request.getContextPath() + "/jsp/bookingConfirmation.jsp?bookingId=" + bookingId);
             } catch (SQLException e) {
                 e.printStackTrace();
                 request.setAttribute("errorMessage", "Database error occurred while processing your reservation.");
@@ -139,5 +113,19 @@ public class ReservationSummaryServlet extends HttpServlet {
             // Redirect to the reservation page when cancel is clicked
             response.sendRedirect(request.getContextPath() + "/jsp/Reservation.jsp");
         }
+    }
+
+    // Generate a unique 10-digit booking ID
+    private String generateUniqueBookingId() {
+        Random random = new Random();
+        StringBuilder bookingId = new StringBuilder();
+
+        // Generate a random 10-digit number
+        for (int i = 0; i < 10; i++) {
+            int digit = random.nextInt(10); // Random digit between 0-9
+            bookingId.append(digit);
+        }
+
+        return bookingId.toString();
     }
 }

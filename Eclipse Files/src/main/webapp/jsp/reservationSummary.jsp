@@ -15,23 +15,23 @@
 </head>
 <body>
 	<!-- Main container for the reservation summary -->
-    <div class="reservation-summary">
+    <div class="wrapper reservation-summary">
         <header>
             <h1>Reservation Summary</h1>
         </header>
 
 	  <!-- Check if we are receiving data for the summary -->
         <%
-            String roomSize = request.getParameter("roomSize");
-            String guests = request.getParameter("guests");
+        	String guests = request.getParameter("guests");
+        	String roomSize = request.getParameter("roomSize");
             String checkIn = request.getParameter("checkIn");
             String checkOut = request.getParameter("checkOut");
             String room = null;
             double pricePerNight = 0;
             double totalPrice = 0;
             if (roomSize == null || guests == null || checkIn == null || checkOut == null) {
-                roomSize = (String) request.getAttribute("roomSize");
-                guests = (String) request.getAttribute("guests");
+            	guests = (String) request.getAttribute("guests");
+            	roomSize = (String) request.getAttribute("roomSize");
                 checkIn = (String) request.getAttribute("checkIn");
                 checkOut = (String) request.getAttribute("checkOut");
             }
@@ -41,21 +41,27 @@
             } else if (guestNumber >= 3) {
                 pricePerNight = 157.50;
             }
+            String imagePath = ""; // Initialize imagePath variable
             switch (roomSize) {
                 case "1":
                     room = "Double Full Beds";
+                    imagePath = request.getContextPath() + "/images/double-full.jpg"; // Update with correct image path
                     break;
                 case "2":
                     room = "Queen";
+                    imagePath = request.getContextPath() + "/images/queen.jpg"; // Update with correct image path
                     break;
                 case "3":
                     room = "Double Queen Beds";
+                    imagePath = request.getContextPath() + "/images/double-queen.jpg"; // Update with correct image path
                     break;
                 case "4":
                     room = "King";
+                    imagePath = request.getContextPath() + "/images/king.jpg"; // Update with correct image path
                     break;
                 default:
                     room = "Unknown";
+                    imagePath = null;
                     break;
             }
             // Calculate the difference in days between check-in and check-out dates
@@ -75,15 +81,28 @@
             long diff = java.util.concurrent.TimeUnit.DAYS.convert(diffInMillies, java.util.concurrent.TimeUnit.MILLISECONDS);
             totalPrice = diff * pricePerNight;
         %>
-        <!-- Display reservation details -->
-        <div class="reservation-details">
-            <h2>Your Reservation</h2>
-             <p>Room Size: <%= room %></p>
-            <p>Guests: <%= guests %></p>
-            <p>Check-in Date: <%= checkIn %></p>
-            <p>Check-out Date: <%= checkOut %></p>
-            <p>Price per Night: $<%= pricePerNight %></p>
-            <p>Total Price: $<%= totalPrice %></p>
+        
+		<!-- Display reservation details -->
+		<div class="reservation-details reservation-info-container">
+		    <div class="reservation-labels">
+		        <p>Guests: <%= guests %></p>
+		        <p>Room Size: <%= room %></p>
+		        <p>Check-In: <%= request.getAttribute("checkIn") %></p>
+		        <p>Check-Out: <%= request.getAttribute("checkOut") %></p>
+		        <p>Price per Night: $<%= String.format("%.2f", pricePerNight) %></p>
+		    </div>
+		</div>
+        
+        <!-- Display the room image -->
+        <% if (imagePath != null && !imagePath.isEmpty()) { %>
+            <div class="room-image-container">
+                <img src="<%= imagePath %>" alt="Room Image" class="room-image">
+            </div>
+        <% } %>
+        
+        <!-- Display the total price underneath the image -->
+        <div class="total-price-container">
+            <h2>Total Price: $<%= String.format("%.2f", totalPrice) %></h2>
         </div>
 
         <div class="button-container">
@@ -98,7 +117,6 @@
                 <input type="hidden" name="guests" value="<%= guests %>">
                 <input type="hidden" name="checkIn" value="<%= checkIn %>">
                 <input type="hidden" name="checkOut" value="<%= checkOut %>">
-                
                 <button type="submit" name="action" value="submit" class="submit-button">Submit</button>
             </form>
         </div>

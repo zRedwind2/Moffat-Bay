@@ -1,0 +1,81 @@
+/* General layout styling */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3a5a40;
+    color: #dad7cd;
+
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #dad7cd;
+    border-radius: 10px;
+    border: 3px solid #4b615f;   
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  
+    text-align: center; 
+}
+
+.reservation-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    color: #4b615f;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.reservation-info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 10px; /* Adjust the space between rows and columns */
+    margin-bottom: 20px;
+}
+
+.reservation-labels {
+    text-align: right; /* Align labels to the right */
+    padding-right: 10px;
+}
+
+.reservation-values {
+    text-align: left; /* Align values to the left */
+}
+
+.reservation-details p {
+    margin: 5px 0; /* Adjust spacing between items */
+}
+
+.room-image {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+button.cancel-button {
+    padding: 10px 20px;
+    background-color: #4b615f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+button.cancel-button:hover {
+    background-color: #3a4d4a;
+}
+
+h1 {
+    color: #4b615f;
+    font-size: 2.3em;
+    margin-bottom: 30px;
+    text-align: center;
+}

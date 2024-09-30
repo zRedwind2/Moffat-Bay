@@ -62,7 +62,6 @@
                         break;
                 }
 
-                console.log("Image path: " + imagePath); // Debugging line
                 roomImage.attr('src', imagePath).show();
             });
 
@@ -80,7 +79,7 @@
                 const timeDiff = Math.abs(checkOutDate - checkInDate);
                 const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
                 const totalPrice = diffDays * pricePerNight;
-                $("#totalPrice").text("Total Price: $" + totalPrice);
+                $("#totalPrice").text("Total Price: $" + totalPrice.toFixed(2));
             }
         }
     </script>
@@ -88,11 +87,8 @@
 <body>
     <div class="container">
         <h1>Make a Reservation</h1>
-        <div class="menus-image">
-            <div class="images">
-                <img id="roomImage" src="" alt="Room Image" style="width: 100%; max-width: 250px; display: none;">
-            </div>
-            <form action="${pageContext.request.contextPath}/ReservationServlet" method="post">
+        <form action="${pageContext.request.contextPath}/ReservationServlet" method="post">
+            <div class="details">
                 <div class="dropdown-menus">
                     <label for="guests">Guests: </label>
                     <select id="guests" name="guests" required>
@@ -116,17 +112,24 @@
                     <label for="checkOut">Check-Out: </label>
                     <input type="text" id="checkOut" name="checkOut" required><br/>
                 </div>
-                <div class="total-button">
-                    <h2 id="totalPrice">Total Price: $0</h2>
-                    <% if (session.getAttribute("userUsername") != null) { %>
-                    <button type="submit">Book Now!</button>
-					<% } else { %>
-					<h1>Please login to make a reservation.</h1>
-					<% } %>
+            </div>
 
-                </div>
-            </form>
-        </div>
+            <!-- Image below the input data -->
+            <div class="image-container">
+                <img id="roomImage" src="" alt="Room Image" style="width: 350px; display: none;">
+            </div>
+
+            <div class="total-price-container">
+                <h2 id="totalPrice">Total Price: $0.00</h2>
+            </div>
+			<% if (session.getAttribute("userUsername") != null) { %>
+            <div class="total-button">
+                <button type="submit">Book Now!</button>
+            </div>
+            <% } else { %>
+            <h1>Please login to make a reservation.</h1>
+			<% } %>
+        </form>
     </div>
 </body>
 </html>

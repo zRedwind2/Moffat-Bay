@@ -1,20 +1,64 @@
-/* General body styling */
+/* General layout styling */
+
 body {
-    background-color: #3a5a40; /* Background color */
-    color: #dad7cd; /* Text color */
     font-family: Arial, sans-serif;
-}
-
-/* Ensure all text elements inherit the text color */
-h1, h2, h3, h4, h5, h6, p, a, span, div {
+    background-color: #3a5a40;
     color: #dad7cd;
-}
-a {
-    color: #dad7cd; /* Text color */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Make the link bold */
+    text-align: center;
 }
 
-a:hover {
-    text-decoration: underline; /* Underline on hover */
+.wrapper {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #dad7cd;
+    border-radius: 10px;
+    border: 3px solid #4b615f;   
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  
+    text-align: center; 
+}
+
+.wrapper2 {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #dad7cd;
+    border-radius: 10px;
+    border: 3px solid #4b615f;   
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  
+    text-align: center; 
+}
+
+.reservation-details {
+    margin: 20px 0;
+    padding: 10px;
+    color: #4b615f;
+}
+
+h1 {
+    color: #4b615f;
+    font-size: 2.3em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #4b615f;
+    font-size: 2.0em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+a.back-button {
+    padding: 10px 20px;
+    background-color: #4b615f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+a.back-button:hover {
+    background-color: #3a4d4a;
 }
