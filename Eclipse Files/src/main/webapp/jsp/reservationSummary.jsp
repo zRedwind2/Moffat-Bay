@@ -85,18 +85,11 @@
 		<!-- Display reservation details -->
 		<div class="reservation-details reservation-info-container">
 		    <div class="reservation-labels">
-		        <p>Guests:</p>
-		        <p>Room Size:</p>
-		        <p>Check-In:</p>
-		        <p>Check-Out:</p>
-		        <p>Price per Night:</p>
-		    </div>
-		    <div class="reservation-values">
-		        <p><%= guests %></p>
-		        <p><%= room %></p>
-		        <p><%= request.getAttribute("checkIn") %></p>
-		        <p><%= request.getAttribute("checkOut") %></p>
-		        <p>$<%= String.format("%.2f", pricePerNight) %></p>
+		        <p>Guests: <%= guests %></p>
+		        <p>Room Size: <%= room %></p>
+		        <p>Check-In: <%= request.getAttribute("checkIn") %></p>
+		        <p>Check-Out: <%= request.getAttribute("checkOut") %></p>
+		        <p>Price per Night: $<%= String.format("%.2f", pricePerNight) %></p>
 		    </div>
 		</div>
         

@@ -11,8 +11,14 @@
     <jsp:include page="BottomMenu.jsp" flush="true" />
 </head>
 <body>
-    <h1>Your registration has been confirmed!</h1>
-    <p>Thank you for creating an account with Moffat Bay Lodge.</p>
-    <a href="/Moffat_Bay/jsp/Landing Page.jsp">Back to Landing Page</a>
+	<div class="wrapper2">
+        <header>
+            <h1>Your registration has been confirmed!</h1>
+            <h2>Thank you for creating an account with Moffat Bay Lodge.</h2>
+        </header>
+        <div class="button-container" style="margin-top: 20px;">
+            <a href="/Moffat_Bay/jsp/Landing Page.jsp" class="back-button">Home</a>
+        </div>
+    </div>
 </body>
 </html>

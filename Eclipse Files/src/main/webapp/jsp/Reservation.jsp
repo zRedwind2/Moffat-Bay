@@ -122,10 +122,13 @@
             <div class="total-price-container">
                 <h2 id="totalPrice">Total Price: $0.00</h2>
             </div>
-
+			<% if (session.getAttribute("userUsername") != null) { %>
             <div class="total-button">
                 <button type="submit">Book Now!</button>
             </div>
+            <% } else { %>
+            <h1>Please login to make a reservation.</h1>
+			<% } %>
         </form>
     </div>
 </body>

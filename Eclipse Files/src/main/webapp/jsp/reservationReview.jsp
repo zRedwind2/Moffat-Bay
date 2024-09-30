@@ -18,17 +18,10 @@
         <!-- Display reservation details in a two-column format -->
         <div class="reservation-details">
             <div class="reservation-info-container">
-                <div class="reservation-labels">
-                    <p>Guests:</p>
-                    <p>Bed Size:</p>
-                    <p>Check-In:</p>
-                    <p>Check-Out:</p>
-                    <p>Total Price:</p>
-                </div>
                 <div class="reservation-values">
-                    <p><%= request.getAttribute("guests") %></p>
-                    <p><%= request.getAttribute("roomSize") %></p>
-                    <p>
+                    <p>Guests: <%= request.getAttribute("guests") %></p>
+                    <p>Bed Size: <%= request.getAttribute("roomSize") %></p>
+                    <p>Check-In: 
                         <%
                             // Convert the check-in date to the abbreviated month
                             SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -45,7 +38,7 @@
                             }
                         %>
                     </p>
-                    <p>
+                    <p>Check-Out: 
                         <%
                             // Convert the check-out date to abbreviated month
                             String checkOutDateStr = (String) request.getAttribute("checkOut");
@@ -60,7 +53,7 @@
                             }
                         %>
                     </p>
-					<p>
+					<p>Total Price: 
 					    <%
 					        try {
 					            // Retrieve the guests attribute and check if it's not null
