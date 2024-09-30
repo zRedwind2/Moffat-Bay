@@ -1,19 +1,23 @@
 /* General layout styling */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #3a5a40;
     color: #dad7cd;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .wrapper {
-    max-width: 600px;
+    max-width: 450px;
     margin: 50px auto;
-    padding: 20px 40px 0px 20px;
-    background-color: #dad7cd;  
+    padding: 10px;
+    background-color: #e2d5c1;  
     border-radius: 10px;
-    border: 2px solid #83836c;   
+    border: 3px solid #4b615f;   
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  
-    text-align: center; /* Center the text inside the wrapper */
+    text-align: center; 
 }
 
 form {
@@ -28,10 +32,10 @@ label {
 }
 
 input[type="text"], input[type="email"] {
-    width: 100%;
+    width: 50%;
     padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #83836c;
+    margin: 5px 0;
+    border: 1px solid #4b615f;
     border-radius: 5px;
     background-color: #fff;  
     color: #333;
@@ -39,8 +43,9 @@ input[type="text"], input[type="email"] {
 
 input[type="submit"] {
     padding: 10px 20px;
-    background-color: #344e41;
+    background-color: #4b615f;
     color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     display: block;
@@ -48,13 +53,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #588157;
+    background-color: #3a4d4a;
 }
 
 h1 {
     color: #4b615f;
     font-size: 2.3em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -62,16 +67,16 @@ h1 {
     color: #004000;
 }
 
-/* Updated CSS for centering the image and reservation info */
+
 .reservation-item {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the whole reservation-item container */
-    margin: 20px auto 20px 50px; /* Center the container within the wrapper */
+    justify-content: center; 
+    margin: 50px 20px 20px 20px; 
     padding: 10px;
-    max-width: 500px; /* Limit the max width */
+    max-width: 500px;
     background-color: #fff;
-    border: 2px solid #83836c;
+    border: 1px solid #4b615f;
     border-radius: 5px;
 }
 

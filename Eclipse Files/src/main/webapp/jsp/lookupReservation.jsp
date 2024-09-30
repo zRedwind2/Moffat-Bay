@@ -1,4 +1,6 @@
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +13,18 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Reservation Lookup</h1>
+            <h1>Reservation Search</h1>
         </header>
 
         <!-- Form to search for reservations -->
         <form action="${pageContext.request.contextPath}/lookupReservation" method="post">
-            <label for="bookingId">Booking ID:</label>
+            <label for="bookingId">Reservation ID:</label>
             <input type="text" id="bookingId" name="bookingId"><br><br>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br><br>
 
-            <input type="submit" value="Search Reservation">
+            <input type="submit" value="Submit">
         </form>
 
         <!-- Display reservation details -->
@@ -30,38 +32,47 @@
             <% 
                 ResultSet reservations = (ResultSet) request.getAttribute("reservations");
 
-                // Check if there are any results or if an error message needs to be displayed
-                if (reservations != null && reservations.isBeforeFirst()) {
+                if (reservations != null) {
+                    List<String[]> reservationList = new ArrayList<>();
                     while (reservations.next()) {
-                        String checkIn = reservations.getString("Check_In");
-                        String checkOut = reservations.getString("Check_Out");
-                        String roomSize = reservations.getString("Room_Size");
-                        String imagePath = reservations.getString("Image_Path");
-                        int bookingID = reservations.getInt("Booking_ID");
+                        // Fetching data from ResultSet and storing it in a list
+                        String[] reservationData = new String[5];
+                        reservationData[0] = reservations.getString("Check_In");
+                        reservationData[1] = reservations.getString("Check_Out");
+                        reservationData[2] = reservations.getString("Room_Size");
+                        reservationData[3] = reservations.getString("Image_Path");
+                        reservationData[4] = reservations.getString("Booking_ID");
+                        reservationList.add(reservationData);
+                    }
+
+                    // Display the results if any
+                    if (!reservationList.isEmpty()) {
+                        for (String[] res : reservationList) {
             %>
             <div class="reservation-item">
 			    <!-- Container for the image -->
 			    <div class="reservation-image-container">
-			        <img src="<%= imagePath %>" alt="Room Image" class="room-image">
+			        <img src="<%= res[3] %>" alt="Room Image" class="room-image">
 			    </div>
 			    
 			    <!-- Container for reservation info -->
 			    <div class="reservation-info-container">
-			        <a href="${pageContext.request.contextPath}/ReservationReviewServlet?bookingId=<%= bookingID %>">
-			            Reservation from <%= checkIn %> to <%= checkOut %>
+			        <a href="${pageContext.request.contextPath}/ReservationReviewServlet?bookingId=<%= res[4] %>">
+			            Reservation from <%= res[0] %> to <%= res[1] %>
 			        </a>
 			    </div>
 			</div>
-
+            <% 
+                        }
+                    } else {
+            %>
+                        <p>No reservations found for this email address.</p>
             <% 
                     }
                 } else if (request.getAttribute("errorMessage") != null) { 
             %>
                 <!-- Display the error message if there's an error -->
                 <p style="color:red;"><%= request.getAttribute("errorMessage") %></p>
-            <% } else { %>
-                <!-- Display a message if no reservations are found -->
-                <p>No reservations found for this email address.</p>
             <% } %>
         </div>
     </div>

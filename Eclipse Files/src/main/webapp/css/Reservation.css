@@ -1,74 +1,77 @@
 @charset "ISO-8859-1";
 
-
+/* Container styling */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    color: #344e41;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e2d5c1;
+    border-radius: 10px;
+    border: 3px solid #4b615f;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #4b615f;
+    margin-bottom: 60px;
 }
 
-.total-button {
-    flex-grow: 0;
-    align-self: flex-end;
-}
-
-.images img {
-	width: 300px;
-}
-
+/* Styling for form boxes */
 .dropdown-menus {
-	padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.dropdown-menus input{
-	border: 2px solid #83836c;
-    border-radius: 2px;
+.dropdown-menus input,
+.dropdown-menus select {
+    border: 2px solid #83836c;
+    border-radius: 4px;
     color: black;
-}
-
-.dropdown-menus select{
-	border: 2px solid #83836c;
-    border-radius: 2px;
-    color: black;
+    width: 250px;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
 }
 
 .dropdown-menus option {
-	border: 2px solid #83836c;
-    border-radius: 2px;
+    border: 1px solid #83836c;
     color: black;
 }
 
+.total-price-container {
+    margin-top: 20px;
+    color: #344e41;
+    font-weight: bold;
+}
+
+.total-button {
+    margin-top: 20px;
+}
+
 .total-button button {
-    display: block;
-    margin: 10px auto;
     padding: 10px 20px;
     background-color: #344e41;
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.dropdown-menus {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 10px;
+.total-button button:hover {
+    background-color: #2c3d2f;
 }
 
-.container {
-	background-color: #dad7cd;
-    padding: 20px;
-    border: 2px solid #83836c;
-    border-radius: 5px;
-    display: inline-block;
-    margin: 20px; 
-    text-align: center; 
+/* Styling for the image container */
+.image-container {
+    margin: 20px auto;
+    text-align: center;
 }
 
-.images {
-	float: right;
+.image-container img {
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: block;
+    margin: 0 auto;
 }

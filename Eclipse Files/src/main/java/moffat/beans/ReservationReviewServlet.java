@@ -40,17 +40,16 @@ public class ReservationReviewServlet extends HttpServlet {
                 // Delete the reservation from the database
                 String deleteSql = "DELETE FROM Bookings WHERE Booking_ID = ?";
                 PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
-                deleteStmt.setInt(1, Integer.parseInt(bookingIdParam));
+                deleteStmt.setString(1, bookingIdParam); // Use setString instead of setInt
                 int rowsAffected = deleteStmt.executeUpdate();
 
                 if (rowsAffected > 0) {
-                    request.setAttribute("successMessage", "Reservation successfully canceled.");
+                    // Forward to cancelConfirmation.jsp
+                    request.getRequestDispatcher("/jsp/cancelConfirmation.jsp").forward(request, response);
                 } else {
                     request.setAttribute("errorMessage", "Unable to cancel the reservation. Please try again.");
+                    request.getRequestDispatcher("/jsp/reservationReview.jsp").forward(request, response);
                 }
-
-                // Redirect to the reservation lookup page or any other page as needed
-                response.sendRedirect(request.getContextPath() + "/jsp/lookupReservation.jsp");
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -66,7 +65,7 @@ public class ReservationReviewServlet extends HttpServlet {
                            + "WHERE b.Booking_ID = ?";
                 
                 PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setInt(1, Integer.parseInt(bookingIdParam));
+                stmt.setString(1, bookingIdParam); // Use setString instead of setInt
                 ResultSet rs = stmt.executeQuery();
 
                 if (rs.next()) {
@@ -75,14 +74,21 @@ public class ReservationReviewServlet extends HttpServlet {
                     request.setAttribute("checkIn", rs.getDate("Check_In").toString());
                     request.setAttribute("checkOut", rs.getDate("Check_Out").toString());
                     request.setAttribute("imagePath", rs.getString("Image_Path"));
+                    
+                    // Forward to reservationReview.jsp
+                    request.getRequestDispatcher("/jsp/reservationReview.jsp").forward(request, response);
+                } else {
+                    request.setAttribute("errorMessage", "Reservation details not found.");
+                    request.getRequestDispatcher("/jsp/lookupReservation.jsp").forward(request, response);
                 }
-                
-                request.getRequestDispatcher("/jsp/reservationReview.jsp").forward(request, response);
             } catch (SQLException e) {
                 e.printStackTrace();
                 request.setAttribute("errorMessage", "Error retrieving reservation details.");
                 request.getRequestDispatcher("/jsp/reservationReview.jsp").forward(request, response);
             }
+        } else {
+            request.setAttribute("errorMessage", "Invalid booking ID or action.");
+            request.getRequestDispatcher("/jsp/reservationReview.jsp").forward(request, response);
         }
     }
 }
