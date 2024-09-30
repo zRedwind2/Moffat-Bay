@@ -76,17 +76,19 @@
                             </div>
                             <!-- A seperate dive class for the reservation look-up button and text fields. -->
                             <div class="reservation-inputs">
-                            <br/>
-                            Reservation Look-up
-                            <br/>
-                            <br/>
-                                <label for="reservation-id">  ID</label>
-                                <input type="text" id="reservation-id" name="reservation-id">
-                                <br/>
-                                <label for="reservation-email">Email</label>
-                                <input type="email" id="reservation-email" name="reservation-email">
-                                <button>Enter</button>
-                            </div>
+							    <br/>
+							    Reservation Look-up
+							    <br/>
+							    <br/>
+							    <form action="${pageContext.request.contextPath}/ReservationReviewServlet" method="get">
+							        <label for="reservation-id">ID</label>
+							        <input type="text" id="reservation-id" name="bookingId" required>
+							        <br/>
+							        <label for="reservation-email">Email</label>
+							        <input type="email" id="reservation-email" name="email" required>
+							        <button type="submit">Enter</button>
+							    </form>
+							</div>
                         </div>
                     </div>
                 </div>
