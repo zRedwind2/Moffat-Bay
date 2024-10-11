@@ -46,7 +46,7 @@ public class LookupReservationServlet extends HttpServlet {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, email);
             if (bookingId != null && !bookingId.isEmpty()) {
-                stmt.setInt(2, Integer.parseInt(bookingId));
+                stmt.setLong(2, Long.parseLong(bookingId));
             }
             
             ResultSet rs = stmt.executeQuery();

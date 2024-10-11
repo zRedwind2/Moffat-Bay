@@ -53,13 +53,15 @@
 			    <!-- Container for the image -->
 			    <div class="reservation-image-container">
 			        <img src="<%= res[3] %>" alt="Room Image" class="room-image">
+			        <form action="${pageContext.request.contextPath}/ReservationReviewServlet" method="get" class="review-form">
+			            <input type="hidden" name="bookingId" value="<%= res[4] %>">
+			            <button type="submit" class="review-button">Review</button>
+			        </form>
 			    </div>
 			    
 			    <!-- Container for reservation info -->
 			    <div class="reservation-info-container">
-			        <a href="${pageContext.request.contextPath}/ReservationReviewServlet?bookingId=<%= res[4] %>">
-			            Reservation from <%= res[0] %> to <%= res[1] %>
-			        </a>
+			        <p class="reservation-text">Reservation from <%= res[0] %> to <%= res[1] %></p>
 			    </div>
 			</div>
             <% 
