@@ -12,7 +12,7 @@
     <!-- Referencing stylesheet -->
     <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/LandingPageStyle.css">
     
-    <!-- Includes TopMenu.jsp for the top naviation bar. -->
+    <!-- Includes TopMenu.jsp for the top navigation bar. -->
     <jsp:include page="TopMenu.jsp" flush="true" />
     
     <jsp:include page="BottomMenu.jsp" flush="true" />
@@ -33,12 +33,14 @@
             <!-- Image and text blurb about Moffat Bay Lodge. -->
             <p>
                 <img src="/Moffat_Bay/images/landing_page1.png" alt="Moffat Bay Lodge" class="landing-page-image"><br />
-                Hey there! Welcome to Moffat Bay Lodge, your new favorite getaway spot tucked away on the gorgeous shores of
-                Portland, right off the stunning coast of Maine! We can't wait for you to dive into the incredible beauty and 
-                peace that Maine has to offer. At Moffat Bay Lodge, we are all about mixing the wild charm of nature with a 
-                sprinkle of luxurious comfort. Picture this: a cozy haven where you can kick back, listen to the soothing ocean 
-                waves, and soak in the tranquil vibes of the ancient forest. So come along with us on an exciting adventure through 
-                the wonders of Moffat Bay Lodge, where relaxation, adventure, and the enchanting spirit of Maine are just waiting for you!
+                <div class="horizontal-box">
+                    Hey there! Welcome to Moffat Bay Lodge, your new favorite getaway spot tucked away on the gorgeous shores of
+                    Portland, right off the stunning coast of Maine! We can't wait for you to dive into the incredible beauty and 
+                    peace that Maine has to offer. At Moffat Bay Lodge, we are all about mixing the wild charm of nature with a 
+                    sprinkle of luxurious comfort. Picture this: a cozy haven where you can kick back, listen to the soothing ocean 
+                    waves, and soak in the tranquil vibes of the ancient forest. So come along with us on an exciting adventure through 
+                    the wonders of Moffat Bay Lodge, where relaxation, adventure, and the enchanting spirit of Maine are just waiting for you!
+                </div>
             </p>
             <!-- div class links contains three different items for the three image/link/input field sections of the landing page. -->
             <div class="links">
@@ -60,7 +62,7 @@
                         <img src="/Moffat_Bay/images/pexels-rich-howard-1910092-12084941.jpg" alt="Link 2 Image" class="image-medium">
                         <!-- A button div class is used for the buttons on the page. -->
 						<div class="button">
-                        	<button onclick="location.href='/Moffat_Bay/jsp/Attractions.jsp'">Attractions
+                        	<button onclick="location.href='/Moffat_Bay/jsp/Attractions.jsp'">Attractions</button>
                         </div>
                     </div>
                 </div>
@@ -74,21 +76,19 @@
                         	<div class="button">
                         		<button onclick="location.href='/Moffat_Bay/jsp/Reservation.jsp'">Make a Reservation</button>
                             </div>
-                            <!-- A seperate dive class for the reservation look-up button and text fields. -->
+                            <!-- A separate div class for the reservation look-up button and text fields. -->
                             <div class="reservation-inputs">
-							    <br/>
-							    Reservation Look-up
-							    <br/>
-							    <br/>
-							    <form action="${pageContext.request.contextPath}/ReservationReviewServlet" method="get">
-							        <label for="reservation-id">ID</label>
-							        <input type="text" id="reservation-id" name="bookingId" required>
-							        <br/>
-							        <label for="reservation-email">Email</label>
-							        <input type="email" id="reservation-email" name="email" required>
-							        <button type="submit">Enter</button>
-							    </form>
-							</div>
+                            <br/>
+                            Reservation Look-up
+                            <br/>
+                            <br/>
+                                <label for="reservation-id">  ID</label>
+                                <input type="text" id="reservation-id" name="reservation-id">
+                                <br/>
+                                <label for="reservation-email">Email</label>
+                                <input type="email" id="reservation-email" name="reservation-email">
+                                <button>Enter</button>
+                            </div>
                         </div>
                     </div>
                 </div>
