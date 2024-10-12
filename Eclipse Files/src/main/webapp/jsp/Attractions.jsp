@@ -1,8 +1,9 @@
 <!-- Brett Stovall : Moffat Bay Assignment : Attraction Page -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Attractions</title>
     <!-- Link to the CSS file for the Attractions page -->
     <link rel="stylesheet" type="text/css" href="/Moffat_Bay/css/Attractions.css">
@@ -14,7 +15,7 @@
     <jsp:include page="TopMenu.jsp" flush="true" />
 
     <main>
-        <div class="PageTitle"><h1></h1></div>
+        <div class="PageTitle"></div> <!-- Removed the Explore Moffat Bay text -->
         <div class="Overview">
             <div class="OverviewText">
                 <p>Overview of the Attractions Available</p>

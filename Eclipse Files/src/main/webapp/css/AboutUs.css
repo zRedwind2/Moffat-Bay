@@ -36,6 +36,12 @@ body {
     margin: 0 auto;
 }
 
+/* Styles for larger welcome text */
+.welcome-text {
+    font-size: 1.4em; /* Increase the font size */
+    line-height: 1.5; /* Increase line height for readability */
+}
+
 /* Styles for the image row */
 .image-row {
     display: flex;
