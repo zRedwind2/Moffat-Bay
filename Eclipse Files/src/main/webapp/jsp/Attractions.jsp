@@ -18,7 +18,7 @@
         <div class="PageTitle"></div> <!-- Removed the Explore Moffat Bay text -->
         <div class="Overview">
             <div class="OverviewText">
-                <p>Overview of the Attraction Available</p>
+                <p>Overview of the Attractions Available</p>
             </div>
             <div class="OverviewImages">
                 <div class="ImagePlaceholder">
