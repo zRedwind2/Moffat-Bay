@@ -4,7 +4,6 @@ html {
     font-family: 'Quasimoda';
 }
 
-
 .wrapper, .body-content {
     margin: 0;
     padding: 0;
@@ -24,6 +23,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
 }
+
 .fishf img {
 	width: 200px;
 }
@@ -61,6 +61,24 @@ h1 {
     line-height: 1.5;
     font-weight: 300;
     text-align: justify;
+}
+
+/* Horizontal Box with updated font/color */
+.horizontal-box {
+    background-color: #dad7cd; 
+    border: 2px solid #83836c; 
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    text-align: left; 
+    display: inline-block;
+    width: 100%;
+    max-width: 850px; 
+    margin: 20px auto; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    font-family: Arial, sans-serif; 
+    color: #344e41; 
+    font-size: 1em;
+    line-height: 1.5;
 }
 
 .background-image {
@@ -132,7 +150,7 @@ img {
 /* Example for resizing the background image */
 .background-image img {
     width: 100%; /* Make the background image take up the full width of its container */
-    height: Auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .social-media {
@@ -199,7 +217,6 @@ img {
 }
 
 .reservation-inputs label {
-
 	color: #344e41;
     display: block;
     margin: 2px 0 2px;
