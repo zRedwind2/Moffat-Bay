@@ -32,7 +32,7 @@
             </div>
             <div class="description-box">
                 <!-- Description text -->
-                <p class="description">
+                <p class="description welcome-text">
                     Welcome to Moffat Bay Lodge, your serene escape nestled in the heart of nature. Our lodge offers a perfect 
                     blend of rustic charm and modern comfort, making it an ideal destination for those seeking tranquility and 
                     adventure alike. Founded in 2000, Moffat Bay Lodge has been a sanctuary for nature lovers and adventure seekers. 
@@ -45,10 +45,10 @@
             </div>
             
             <div class="description-box">
-				<h2>Contact Us</h2>
-				<p class="phone"><strong>Phone number:</strong> 123-456-7890</p>
-				<p class="email"><strong>Email:</strong> MoffatBay@email.com</p>
-				<p class="address"><strong>Address:</strong> 123 Moffat Bay Dr. Moffat Bay City, FL, 98765 </p>
+                <h2>Contact Us</h2>
+                <p class="phone"><strong>Phone number:</strong> 123-456-7890</p>
+                <p class="email"><strong>Email:</strong> MoffatBay@email.com</p>
+                <p class="address"><strong>Address:</strong> 123 Moffat Bay Dr. Moffat Bay City, FL, 98765 </p>
             </div>
             <!-- Below description image -->
             <img src="/Moffat_Bay/images/about us page image 3.jpg" alt="Moffat Bay Lodge" class="below-description"><br />
