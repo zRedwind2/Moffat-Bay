@@ -66,6 +66,7 @@ float: center;
 
 /* Dropdown content. Shows when hovering over button. */
 .dropdown-content {
+	position: absolute;
   display: none;
   position: absolute;
   background-color: #a3b18a; /* Adds background to dropdown box. */
