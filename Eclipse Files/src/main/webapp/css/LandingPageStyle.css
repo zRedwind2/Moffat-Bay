@@ -16,6 +16,7 @@ h1 {
     font-style: normal;
     font-weight: 400;
     font-size: 5.5em;
+    color: #DAD7CD;
 }
 
 .header {
@@ -54,6 +55,7 @@ h1 {
     font-family: 'Quasimoda';
     z-index: 2;
     box-shadow: 0px 0px 0px rgba(85, 77, 65, 0.40);
+    color: #DAD7CD;
 }
 
 .body-content p {
